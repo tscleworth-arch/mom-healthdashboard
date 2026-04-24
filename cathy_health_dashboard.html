@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cathy Huffman — Health Profile Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F7F4EF;
+    --cream-dark: #EDE9E1;
+    --ink: #1C1917;
+    --ink-muted: #57534E;
+    --ink-faint: #A8A29E;
+    --teal: #0F766E;
+    --teal-light: #CCFBF1;
+    --teal-mid: #2DD4BF;
+    --amber: #B45309;
+    --amber-light: #FEF3C7;
+    --red: #B91C1C;
+    --red-light: #FEE2E2;
+    --green: #15803D;
+    --green-light: #DCFCE7;
+    --bone: #D6CFC4;
+    --border: rgba(28,25,23,0.1);
+    --radius: 12px;
+    --radius-sm: 6px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  /* ── HEADER ── */
+  header {
+    background: var(--ink);
+    color: var(--cream);
+    padding: 2.5rem 3rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .header-left { display: flex; align-items: center; gap: 1.5rem; }
+
+  .avatar {
+    width: 64px; height: 64px; border-radius: 50%;
+    background: var(--teal); display: flex; align-items: center;
+    justify-content: center; font-family: 'DM Serif Display', serif;
+    font-size: 22px; color: var(--cream); flex-shrink: 0;
+  }
+
+  .patient-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2rem; line-height: 1.1;
+    color: var(--cream);
+  }
+
+  .patient-meta {
+    font-size: 13px; color: rgba(247,244,239,0.55);
+    margin-top: 4px; font-weight: 300;
+  }
+
+  .header-right { text-align: right; }
+
+  .header-facility {
+    font-size: 12px; color: rgba(247,244,239,0.45);
+    font-weight: 300; line-height: 1.8;
+  }
+
+  .header-date {
+    font-size: 11px; color: rgba(247,244,239,0.3);
+    margin-top: 4px;
+  }
+
+  /* ── ALERT BANNER ── */
+  .alert-banner {
+    background: var(--red); color: #fff;
+    padding: 0.85rem 3rem;
+    font-size: 13px; font-weight: 400;
+    display: flex; align-items: center; gap: 10px;
+  }
+
+  .alert-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: #fff; flex-shrink: 0;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  /* ── NAV ── */
+  nav {
+    background: white;
+    border-bottom: 1px solid var(--border);
+    padding: 0 3rem;
+    display: flex; gap: 0; overflow-x: auto;
+  }
+
+  nav a {
+    padding: 1rem 1.25rem;
+    font-size: 13px; font-weight: 400;
+    color: var(--ink-muted);
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    white-space: nowrap;
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  nav a:hover, nav a.active {
+    color: var(--teal);
+    border-bottom-color: var(--teal);
+  }
+
+  /* ── LAYOUT ── */
+  main { max-width: 1100px; margin: 0 auto; padding: 2.5rem 3rem; }
+
+  .section { margin-bottom: 3rem; }
+
+  .section-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.35rem; margin-bottom: 1.25rem;
+    color: var(--ink); padding-bottom: 0.6rem;
+    border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; gap: 10px;
+  }
+
+  .section-title .section-icon {
+    width: 28px; height: 28px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; flex-shrink: 0;
+  }
+
+  /* ── CARDS ── */
+  .card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+  }
+
+  .grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; }
+  .grid3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+  .grid4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 0.75rem; }
+
+  /* ── STAT CARDS ── */
+  .stat {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.25rem 1.5rem;
+  }
+
+  .stat-label {
+    font-size: 11px; font-weight: 400;
+    color: var(--ink-faint);
+    text-transform: uppercase; letter-spacing: 0.07em;
+    margin-bottom: 6px;
+  }
+
+  .stat-value {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.8rem; line-height: 1;
+  }
+
+  .stat-sub { font-size: 12px; color: var(--ink-muted); margin-top: 4px; }
+
+  .val-green { color: var(--green); }
+  .val-amber { color: var(--amber); }
+  .val-red { color: var(--red); }
+  .val-teal { color: var(--teal); }
+
+  /* ── BADGES ── */
+  .badge {
+    display: inline-block; font-size: 11px; font-weight: 400;
+    padding: 3px 9px; border-radius: 100px;
+  }
+
+  .badge-red { background: var(--red-light); color: var(--red); }
+  .badge-amber { background: var(--amber-light); color: var(--amber); }
+  .badge-green { background: var(--green-light); color: var(--green); }
+  .badge-teal { background: var(--teal-light); color: var(--teal); }
+  .badge-gray { background: var(--cream-dark); color: var(--ink-muted); }
+
+  /* ── EXEC SUMMARY ── */
+  .exec-body {
+    font-size: 15px; line-height: 1.8;
+    color: var(--ink-muted); font-weight: 300;
+  }
+
+  .exec-body strong { color: var(--ink); font-weight: 500; }
+
+  .exec-highlight {
+    background: var(--red-light);
+    border-left: 3px solid var(--red);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    padding: 0.85rem 1.25rem;
+    margin-top: 1rem;
+    font-size: 14px; color: var(--red);
+  }
+
+  /* ── CBC MARKERS ── */
+  .cbc-row {
+    display: flex; align-items: center; gap: 12px;
+    padding: 9px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 13px;
+  }
+
+  .cbc-row:last-child { border-bottom: none; }
+
+  .cbc-name { width: 130px; flex-shrink: 0; font-weight: 400; color: var(--ink); }
+  .cbc-result { width: 50px; flex-shrink: 0; text-align: right; font-weight: 500; color: var(--ink); }
+
+  .cbc-track {
+    flex: 1; height: 5px;
+    background: var(--cream-dark); border-radius: 3px;
+    position: relative;
+  }
+
+  .cbc-dot {
+    width: 11px; height: 11px; border-radius: 50%;
+    background: var(--teal);
+    border: 2px solid white;
+    position: absolute; top: -3px;
+    transform: translateX(-50%);
+    box-shadow: 0 0 0 1px var(--teal);
+  }
+
+  .cbc-label {
+    width: 65px; flex-shrink: 0; text-align: right;
+    font-size: 11px;
+  }
+
+  /* ── DEXA SECTION ── */
+  .dexa-score-card {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.25rem 1.5rem;
+    background: white;
+  }
+
+  .dexa-region { font-size: 12px; color: var(--ink-faint); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 4px; }
+  .dexa-site { font-size: 15px; font-weight: 500; color: var(--ink); margin-bottom: 6px; }
+  .dexa-t { font-family: 'DM Serif Display', serif; font-size: 2.2rem; line-height: 1; margin-bottom: 4px; }
+  .dexa-bmd { font-size: 12px; color: var(--ink-muted); }
+
+  .t-bar-wrap { margin: 0.75rem 0 0.5rem; }
+  .t-bar-track {
+    height: 8px; border-radius: 4px;
+    position: relative; overflow: visible;
+    background: linear-gradient(to right, #B91C1C 0%, #D97706 30%, #15803D 55%, #0F766E 100%);
+  }
+
+  .t-bar-marker {
+    width: 14px; height: 14px; border-radius: 50%;
+    background: var(--ink); border: 3px solid white;
+    position: absolute; top: -3px;
+    transform: translateX(-50%);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.3);
+  }
+
+  .t-bar-labels {
+    display: flex; justify-content: space-between;
+    font-size: 10px; color: var(--ink-faint);
+    margin-top: 4px;
+  }
+
+  /* ── GENE CARDS ── */
+  .gene-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 0.85rem;
+    border-left-width: 4px;
+  }
+
+  .gene-card.priority-high { border-left-color: var(--red); }
+  .gene-card.priority-mod { border-left-color: var(--amber); }
+  .gene-card.priority-good { border-left-color: var(--green); }
+
+  .gene-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; margin-bottom: 0.5rem; }
+  .gene-name { font-size: 15px; font-weight: 500; color: var(--ink); }
+  .gene-rsid { font-size: 11px; color: var(--ink-faint); margin-top: 2px; }
+  .gene-body { font-size: 13px; color: var(--ink-muted); line-height: 1.65; margin-top: 0.5rem; }
+  .gene-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 0.6rem; }
+  .gene-tag { font-size: 11px; padding: 2px 8px; border-radius: 100px; background: var(--cream-dark); color: var(--ink-muted); }
+  .gene-action { font-size: 12px; font-weight: 500; margin-top: 0.6rem; padding: 6px 10px; border-radius: var(--radius-sm); background: var(--cream); }
+
+  /* ── SUPPLEMENTS ── */
+  .supp-item {
+    display: flex; gap: 1rem; padding: 1rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .supp-item:last-child { border-bottom: none; }
+
+  .supp-num {
+    width: 28px; height: 28px; border-radius: 50%;
+    background: var(--ink); color: var(--cream);
+    font-size: 12px; font-weight: 500;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; margin-top: 2px;
+  }
+
+  .supp-name { font-size: 14px; font-weight: 500; color: var(--ink); }
+  .supp-brand { font-size: 12px; color: var(--ink-faint); margin-top: 1px; }
+  .supp-why { font-size: 13px; color: var(--ink-muted); margin-top: 4px; line-height: 1.55; }
+  .supp-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 6px; }
+  .supp-tag { font-size: 11px; padding: 2px 8px; border-radius: 100px; background: var(--teal-light); color: var(--teal); }
+
+  .buy-btn {
+    display: inline-block; margin-top: 8px;
+    font-size: 12px; font-weight: 500;
+    color: white; background: var(--teal);
+    padding: 5px 14px; border-radius: 100px;
+    text-decoration: none; transition: background 0.2s;
+  }
+
+  .buy-btn:hover { background: #0D6B63; }
+
+  /* ── TIMING ── */
+  .timing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.25rem; }
+
+  .timing-col {
+    background: var(--cream);
+    border-radius: var(--radius);
+    padding: 1rem 1.25rem;
+  }
+
+  .timing-label {
+    font-size: 11px; font-weight: 500;
+    text-transform: uppercase; letter-spacing: 0.07em;
+    color: var(--ink-faint); margin-bottom: 8px;
+  }
+
+  .timing-row { font-size: 13px; color: var(--ink-muted); padding: 3px 0; }
+
+  /* ── ACTION ITEMS ── */
+  .action-item {
+    display: flex; align-items: flex-start; gap: 10px;
+    padding: 8px 0; border-bottom: 1px solid var(--border);
+    font-size: 13px; color: var(--ink-muted);
+  }
+
+  .action-item:last-child { border-bottom: none; }
+
+  .action-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    flex-shrink: 0; margin-top: 5px;
+  }
+
+  .dot-red { background: var(--red); }
+  .dot-amber { background: var(--amber); }
+  .dot-green { background: var(--green); }
+
+  .action-item strong { color: var(--ink); font-weight: 500; }
+
+  /* ── DEXA TABLE ── */
+  .dexa-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .dexa-table th {
+    text-align: left; padding: 8px 12px;
+    background: var(--cream); font-size: 11px;
+    text-transform: uppercase; letter-spacing: 0.06em;
+    color: var(--ink-faint); font-weight: 400;
+    border-bottom: 1px solid var(--border);
+  }
+  .dexa-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--border);
+    color: var(--ink-muted);
+  }
+  .dexa-table tr:last-child td { border-bottom: none; }
+  .dexa-table td:first-child { color: var(--ink); font-weight: 400; }
+
+  /* ── DISCLAIMER ── */
+  .disclaimer {
+    font-size: 11px; color: var(--ink-faint);
+    background: var(--cream-dark);
+    border-radius: var(--radius-sm);
+    padding: 1rem 1.25rem;
+    margin-top: 2rem;
+    line-height: 1.7;
+  }
+
+  /* ── PRINT ── */
+  @media print {
+    nav, .alert-dot { display: none; }
+    main { padding: 1rem; }
+    header { padding: 1.5rem 2rem; }
+    .card, .gene-card, .stat, .dexa-score-card { break-inside: avoid; }
+    .buy-btn { background: var(--ink) !important; }
+  }
+
+  @media (max-width: 700px) {
+    header, main { padding: 1.5rem; }
+    nav { padding: 0 1.5rem; }
+    .alert-banner { padding: 0.85rem 1.5rem; }
+    .grid4, .grid3, .grid2 { grid-template-columns: 1fr; }
+    .timing-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-left">
+    <div class="avatar">CH</div>
+    <div>
+      <div class="patient-name">Cathy Huffman</div>
+      <div class="patient-meta">DOB: 03/23/1959 &nbsp;·&nbsp; Age 67 &nbsp;·&nbsp; Female &nbsp;·&nbsp; Height: 61 in &nbsp;·&nbsp; Weight: 130 lbs</div>
+      <div class="patient-meta">Patient ID: 188177 &nbsp;·&nbsp; Referring: Sweny Gulati, MD</div>
+    </div>
+  </div>
+  <div class="header-right">
+    <div class="header-facility">Center for Advanced Health Care<br>The Villages Health<br>2955 Brownwood Blvd, The Villages, FL 32163</div>
+    <div class="header-date">Dashboard compiled: April 2026</div>
+  </div>
+</header>
+
+<!-- ALERT BANNER -->
+<div class="alert-banner">
+  <div class="alert-dot"></div>
+  <strong>Clinical finding requiring action:</strong> WHO-confirmed Osteoporosis at Left Femoral Neck (T-score −2.7). Pharmacologic intervention recommended by referring physician. Pharmacologic management discussion with Dr. Gulati is the top priority.
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="#summary" class="active">Summary</a>
+  <a href="#dexa">DEXA / Bone</a>
+  <a href="#bloodwork">Bloodwork</a>
+  <a href="#genetics">Genetics</a>
+  <a href="#supplements">Supplements</a>
+  <a href="#actions">Action Plan</a>
+</nav>
+
+<main>
+
+  <!-- EXEC SUMMARY -->
+  <section class="section" id="summary">
+    <div class="section-title">
+      <div class="section-icon" style="background:var(--cream-dark);">&#9632;</div>
+      Executive summary
+    </div>
+
+    <div class="grid4" style="margin-bottom:1.25rem;">
+      <div class="stat">
+        <div class="stat-label">CBC status</div>
+        <div class="stat-value val-green">Clean</div>
+        <div class="stat-sub">All 17 markers normal</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">DEXA — worst T-score</div>
+        <div class="stat-value val-red">−2.7</div>
+        <div class="stat-sub">Left femoral neck · Osteoporosis</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Genetic variants</div>
+        <div class="stat-value val-amber">6</div>
+        <div class="stat-sub">5 risk/watch · 1 protective</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Supplement stack</div>
+        <div class="stat-value val-teal">5</div>
+        <div class="stat-sub">Products · 4–5 doses/day</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="exec-body">
+        Cathy is a 67-year-old woman in strong metabolic and hematologic health — her March 2026 CBC is entirely clean, with all 17 markers normal and no flags. However, her September 2025 DEXA scan reveals a <strong>clinically significant bone health problem</strong>: WHO-confirmed osteoporosis at the left femoral neck (T-score −2.7), with the right femoral neck approaching the threshold (−2.3) and low bone mass at the spine (−1.4). The referring physician has recommended pharmacologic intervention and this is now Cathy's <strong>most urgent medical priority</strong>.
+        <br><br>
+        Her genetic profile adds important context. The <strong>MTHFR C677T variant</strong> impairs the methylation cycle, reducing calcium absorption efficiency and increasing homocysteine — both of which accelerate bone loss. The <strong>COMT homozygous slow variant</strong> affects estrogen clearance; post-menopausal estrogen decline is the primary driver of bone loss in women, and impaired estrogen metabolism may have worsened her trajectory. Her <strong>CFH variant</strong> raises macular degeneration risk. Her <strong>ADD1 variant</strong> increases salt-sensitive blood pressure risk. The standout positive is her <strong>homozygous ApoE2 genotype</strong> — significantly protective against Alzheimer's disease.
+        <br><br>
+        The supplement protocol has been updated to include calcium and additional Vitamin D specifically for bone health, on top of the already-indicated MTHFR, eye, and cardiovascular stack.
+      </div>
+      <div class="exec-highlight">
+        Osteoporosis diagnosis confirmed by WHO criteria. Pharmacologic intervention (bisphosphonates or equivalent) should be discussed with Dr. Gulati immediately. DEXA follow-up recommended September 2027.
+      </div>
+    </div>
+  </section>
+
+  <!-- DEXA -->
+  <section class="section" id="dexa">
+    <div class="section-title">
+      <div class="section-icon" style="background:var(--red-light); color:var(--red);">&#9632;</div>
+      DEXA bone densitometry — 9/15/2025
+    </div>
+
+    <div style="margin-bottom:0.85rem;display:flex;gap:8px;flex-wrap:wrap;">
+      <span class="badge badge-red">Osteoporosis — Left Femoral Neck</span>
+      <span class="badge badge-amber">Low Bone Mass — Spine L1–L4</span>
+      <span class="badge badge-amber">Low Bone Mass — Total Femur Mean</span>
+      <span class="badge badge-gray">Follow-up DEXA: September 2027</span>
+    </div>
+
+    <!-- T-score cards -->
+    <div class="grid3" style="margin-bottom:1.25rem;">
+
+      <div class="dexa-score-card" style="border-top:4px solid var(--red);">
+        <div class="dexa-region">DualFemur</div>
+        <div class="dexa-site">Left Femoral Neck</div>
+        <div class="dexa-t val-red">−2.7</div>
+        <div class="dexa-bmd">BMD: 0.659 g/cm² &nbsp;·&nbsp; Z-score: −1.2</div>
+        <div class="t-bar-wrap">
+          <div class="t-bar-track">
+            <!-- T-score range: -4 to +2 = 6 units. Position of -2.7: ((-2.7 - (-4)) / 6) * 100 = 21.7% -->
+            <div class="t-bar-marker" style="left:21.7%"></div>
+          </div>
+          <div class="t-bar-labels">
+            <span>−4 Osteoporosis</span>
+            <span>−2.5</span>
+            <span>−1</span>
+            <span>+2 Normal</span>
+          </div>
+        </div>
+        <span class="badge badge-red">WHO: Osteoporosis</span>
+      </div>
+
+      <div class="dexa-score-card" style="border-top:4px solid var(--red);">
+        <div class="dexa-region">DualFemur</div>
+        <div class="dexa-site">Right Femoral Neck</div>
+        <div class="dexa-t val-red">−2.3</div>
+        <div class="dexa-bmd">BMD: 0.721 g/cm² &nbsp;·&nbsp; Z-score: −0.8</div>
+        <div class="t-bar-wrap">
+          <div class="t-bar-track">
+            <!-- Position of -2.3: ((-2.3+4)/6)*100 = 28.3% -->
+            <div class="t-bar-marker" style="left:28.3%"></div>
+          </div>
+          <div class="t-bar-labels">
+            <span>−4</span><span>−2.5</span><span>−1</span><span>+2</span>
+          </div>
+        </div>
+        <span class="badge badge-amber">Near osteoporosis threshold</span>
+      </div>
+
+      <div class="dexa-score-card" style="border-top:4px solid var(--amber);">
+        <div class="dexa-region">AP Spine</div>
+        <div class="dexa-site">L1–L4 (excluding L3)</div>
+        <div class="dexa-t val-amber">−1.4</div>
+        <div class="dexa-bmd">BMD: 1.018 g/cm² &nbsp;·&nbsp; Z-score: +0.3</div>
+        <div class="t-bar-wrap">
+          <div class="t-bar-track">
+            <!-- Position of -1.4: ((-1.4+4)/6)*100 = 43.3% -->
+            <div class="t-bar-marker" style="left:43.3%"></div>
+          </div>
+          <div class="t-bar-labels">
+            <span>−4</span><span>−2.5</span><span>−1</span><span>+2</span>
+          </div>
+        </div>
+        <span class="badge badge-amber">WHO: Low Bone Mass</span>
+      </div>
+
+    </div>
+
+    <!-- Full table -->
+    <div class="card" style="padding:0; overflow:hidden;">
+      <table class="dexa-table">
+        <thead>
+          <tr>
+            <th>Site</th>
+            <th>Region</th>
+            <th>BMD (g/cm²)</th>
+            <th>T-score (YA)</th>
+            <th>Z-score (AM)</th>
+            <th>WHO Classification</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>AP Spine</td>
+            <td>L1</td>
+            <td>0.895</td>
+            <td style="color:var(--amber);font-weight:500;">−2.0</td>
+            <td>−0.4</td>
+            <td><span class="badge badge-amber">Low Bone Mass</span></td>
+          </tr>
+          <tr>
+            <td>AP Spine</td>
+            <td>L2</td>
+            <td>1.030</td>
+            <td style="color:var(--amber);font-weight:500;">−1.5</td>
+            <td>+0.1</td>
+            <td><span class="badge badge-amber">Low Bone Mass</span></td>
+          </tr>
+          <tr>
+            <td>AP Spine</td>
+            <td>L3 (excluded)</td>
+            <td>1.142</td>
+            <td>−0.6</td>
+            <td>+1.0</td>
+            <td><span class="badge badge-green">Normal</span></td>
+          </tr>
+          <tr>
+            <td>AP Spine</td>
+            <td>L4</td>
+            <td>1.101</td>
+            <td>−0.9</td>
+            <td>+0.7</td>
+            <td><span class="badge badge-green">Normal</span></td>
+          </tr>
+          <tr style="background:var(--cream);">
+            <td><strong>AP Spine</strong></td>
+            <td><strong>L1–L4 (L3 excl.)</strong></td>
+            <td><strong>1.018</strong></td>
+            <td style="color:var(--amber);font-weight:500;"><strong>−1.4</strong></td>
+            <td><strong>+0.3</strong></td>
+            <td><span class="badge badge-amber">Low Bone Mass</span></td>
+          </tr>
+          <tr>
+            <td>DualFemur</td>
+            <td>Neck Left</td>
+            <td>0.659</td>
+            <td style="color:var(--red);font-weight:500;">−2.7</td>
+            <td>−1.2</td>
+            <td><span class="badge badge-red">Osteoporosis</span></td>
+          </tr>
+          <tr>
+            <td>DualFemur</td>
+            <td>Neck Right</td>
+            <td>0.721</td>
+            <td style="color:var(--red);font-weight:500;">−2.3</td>
+            <td>−0.8</td>
+            <td><span class="badge badge-amber">Low Bone Mass</span></td>
+          </tr>
+          <tr>
+            <td>DualFemur</td>
+            <td>Neck Mean</td>
+            <td>0.690</td>
+            <td style="color:var(--red);font-weight:500;">−2.5</td>
+            <td>−1.0</td>
+            <td><span class="badge badge-red">Osteoporosis threshold</span></td>
+          </tr>
+          <tr>
+            <td>DualFemur</td>
+            <td>Total Left</td>
+            <td>0.828</td>
+            <td style="color:var(--amber);font-weight:500;">−1.4</td>
+            <td>−0.2</td>
+            <td><span class="badge badge-amber">Low Bone Mass</span></td>
+          </tr>
+          <tr>
+            <td>DualFemur</td>
+            <td>Total Right</td>
+            <td>0.814</td>
+            <td style="color:var(--amber);font-weight:500;">−1.5</td>
+            <td>−0.3</td>
+            <td><span class="badge badge-amber">Low Bone Mass</span></td>
+          </tr>
+          <tr style="background:var(--cream);">
+            <td><strong>DualFemur</strong></td>
+            <td><strong>Total Mean</strong></td>
+            <td><strong>0.821</strong></td>
+            <td style="color:var(--amber);font-weight:500;"><strong>−1.5</strong></td>
+            <td><strong>−0.2</strong></td>
+            <td><span class="badge badge-amber">Low Bone Mass</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card" style="margin-top:1rem;">
+      <div style="font-size:13px;font-weight:500;color:var(--ink);margin-bottom:0.6rem;">Genetic-bone connection</div>
+      <div style="font-size:13px;color:var(--ink-muted);line-height:1.65;">
+        Cathy's bone loss likely has both hormonal and genetic drivers. Post-menopausal estrogen decline is the primary cause of accelerated bone loss in women — her <strong style="color:var(--ink);">COMT homozygous slow variant</strong> affects estrogen clearance, which may have contributed to an atypical estrogen metabolism pattern through the transition. Her <strong style="color:var(--ink);">MTHFR C677T variant</strong> elevates homocysteine, which is independently associated with increased fracture risk and impaired bone collagen cross-linking. These two genetic factors are likely amplifying what would otherwise be typical post-menopausal bone loss. Calcium absorption (aided by Vitamin D + K2) and methylation support (5-MTHF) both directly address bone metabolism.
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOODWORK -->
+  <section class="section" id="bloodwork">
+    <div class="section-title">
+      <div class="section-icon" style="background:var(--green-light); color:var(--green);">&#9632;</div>
+      CBC with auto differential — 3/25/2026
+    </div>
+
+    <div style="margin-bottom:0.85rem;display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
+      <span class="badge badge-green">All 17 markers normal</span>
+      <span style="font-size:12px;color:var(--ink-faint);">Ordered by Dannette Schmidt, APRN</span>
+    </div>
+
+    <div class="grid2">
+      <div class="card" style="padding:0 1.5rem;">
+        <div style="font-size:12px;font-weight:500;color:var(--ink-faint);text-transform:uppercase;letter-spacing:0.06em;padding:1rem 0 0.5rem;">Red blood cell panel</div>
+        <div class="cbc-row">
+          <div class="cbc-name">WBC</div>
+          <div class="cbc-result">4.3</div>
+          <div class="cbc-track"><div class="cbc-dot" style="left:calc((4.3-3.4)/(10.8-3.4)*100%)"></div></div>
+          <div class="cbc-label" style="color:var(--green);">Normal</div>
+        </div>
+        <div class="cbc-row">
+          <div class="cbc-name">RBC</div>
+          <div class="cbc-result">4.72</div>
+          <div class="cbc-track"><div class="cbc-dot" style="left:calc((4.72-3.77)/(5.28-3.77)*100%)"></div></div>
+          <div class="cbc-label" style="color:var(--green);">Normal</div>
+        </div>
+        <div class="cbc-row">
+          <div class="cbc-name">Hemoglobin</div>
+          <div class="cbc-result">14.3</div>
+          <div class="cbc-track"><div class="cbc-dot" style="left:calc((14.3-11.1)/(15.9-11.1)*100%)"></div></div>
+          <div class="cbc-label" style="color:var(--green);">Normal</div>
+        </div>
+        <div class="cbc-row">
+          <div class="cbc-name">Hematocrit</div>
+          <div class="cbc-result">43.1%</div>
+          <div class="cbc-track"><div class="cbc-dot" style="left:calc((43.1-34)/(46.6-34)*100%)"></div></div>
+          <div class="cbc-label" style="color:var(--green);">Normal</div>
+        </div>
+        <div class="cbc-row">
+          <div class="cbc-name">MCV</div>
+          <div class="cbc-result">91 fL</div>
+          <div class="cbc-track"><div class="cbc-dot" style="left:calc((91-79)/(97-79)*100%)"></div></div>
+          <div class="cbc-label" style="color:var(--green);">Normal</div>
+        </div>
+        <div class="cbc-row">
+          <div class="cbc-name">MCH</div>
+          <div class="cbc-result">30.3</div>
+          <div class="cbc-track"><div class="cbc-dot" style="left:calc((30.3-26.6)/(33-26.6)*100%)"></div></div>
+          <div class="cbc-label" style="color:var(--green);">Normal</div>
+        </div>
+        <div class="cbc-row">
+          <div class="cbc-name">MCHC</div>
+          <div class="cbc-result">33.2</div>
+          <div class="cbc-track"><div class="cbc-dot" style="left:calc((33.2-31.5)/(35.7-31.5)*100%)"></div></div>
+          <div class="cbc-label" style="color:var(--green);">Normal</div>
+        </div>
+        <div class="cbc-row">
+          <div class="cbc-name">RDW</div>
+          <div class="cbc-result">12.8%</div>
+          <div class="cbc-track"><div class="cbc-dot" style="left:calc((12.8-11.7)/(15.4-11.7)*100%)"></div></div>
+          <div class="cbc-label" style="color:var(--green);">Normal</div>
+        </div>
+        <div class="cbc-row">
+          <div class="cbc-name">Platelets</div>
+          <div class="cbc-result">206</div>
+          <div class="cbc-track"><div class="cbc-dot" style="left:calc((206-150)/(450-150)*100%)"></div></div>
+          <div class="cbc-label" style="color:var(--green);">Normal</div>
+        </div>
+      </div>
+
+      <div class="card" style="padding:0 1.5rem;">
+        <div style="font-size:12px;font-weight:500;color:var(--ink-faint);text-transform:uppercase;letter-spacing:0.06em;padding:1rem 0 0.5rem;">Differential (absolute counts)</div>
+        <div class="cbc-row">
+          <div class="cbc-name">Neutrophils (abs)</div>
+          <div class="cbc-result">1.7</div>
+          <div class="cbc-track"><div class="cbc-dot" style="left:calc((1.7-1.4)/(7-1.4)*100%)"></div></div>
+          <div class="cbc-label" style="color:var(--amber);">Low-norm</div>
+        </div>
+        <div class="cbc-row">
+          <div class="cbc-name">Lymphs (abs)</div>
+          <div class="cbc-result">2.0</div>
+          <div class="cbc-track"><div class="cbc-dot" style="left:calc((2.0-0.7)/(3.1-0.7)*100%)"></div></div>
+          <div class="cbc-label" style="color:var(--green);">Normal</div>
+        </div>
+        <div class="cbc-row">
+          <div class="cbc-name">Monocytes (abs)</div>
+          <div class="cbc-result">0.3</div>
+          <div class="cbc-track"><div class="cbc-dot" style="left:calc((0.3-0.1)/(0.9-0.1)*100%)"></div></div>
+          <div class="cbc-label" style="color:var(--green);">Normal</div>
+        </div>
+        <div class="cbc-row">
+          <div class="cbc-name">Eos (abs)</div>
+          <div class="cbc-result">0.2</div>
+          <div class="cbc-track"><div class="cbc-dot" style="left:calc((0.2-0)/(0.4-0)*100%)"></div></div>
+          <div class="cbc-label" style="color:var(--green);">Normal</div>
+        </div>
+        <div class="cbc-row">
+          <div class="cbc-name">Baso (abs)</div>
+          <div class="cbc-result">0.1</div>
+          <div class="cbc-track"><div class="cbc-dot" style="left:calc((0.1-0)/(0.2-0)*100%)"></div></div>
+          <div class="cbc-label" style="color:var(--green);">Normal</div>
+        </div>
+        <div style="margin-top:1rem;padding:0.75rem;background:var(--cream);border-radius:var(--radius-sm);font-size:12px;color:var(--ink-muted);line-height:1.6;">
+          <strong style="color:var(--ink);">Clinical note:</strong> MCV 91 (mid-range) is reassuring — MTHFR-driven folate deficiency typically elevates MCV. Absolute neutrophils at 1.7 sit at the low end of normal. NLR of 0.85 is lymphocyte-dominant, common in healthy adults. Missing from this panel: homocysteine, ferritin, Vitamin D, lipids, HbA1c.
+        </div>
+      </div>
+    </div>
+
+    <!-- Missing tests -->
+    <div class="card" style="margin-top:1rem;">
+      <div style="font-size:13px;font-weight:500;color:var(--ink);margin-bottom:0.75rem;">Tests to request at next provider visit</div>
+      <div class="action-item"><div class="action-dot dot-red"></div><div><strong>Homocysteine (serum)</strong> — Most critical missing test. Quantifies MTHFR impact. Target: &lt;10 µmol/L (optimal &lt;7).</div></div>
+      <div class="action-item"><div class="action-dot dot-red"></div><div><strong>Fasting lipid panel</strong> — Required given ApoE2 homozygous genotype (type 3 hyperlipoproteinemia watch).</div></div>
+      <div class="action-item"><div class="action-dot dot-red"></div><div><strong>Dilated eye exam (annual)</strong> — Critical given CFH AMD risk variant. AMD is silent until significant vision loss.</div></div>
+      <div class="action-item"><div class="action-dot dot-amber"></div><div><strong>Vitamin D 25-OH</strong> — Baseline before D3 supplementation. Target: 50–80 ng/mL. Bone health urgency elevates this.</div></div>
+      <div class="action-item"><div class="action-dot dot-amber"></div><div><strong>Serum B12</strong> — Confirm B12 status. Normal MCV doesn't rule out functional B12 deficiency.</div></div>
+      <div class="action-item"><div class="action-dot dot-amber"></div><div><strong>Ferritin</strong> — Iron stores. CBC can be normal while ferritin is depleted.</div></div>
+      <div class="action-item"><div class="action-dot dot-amber"></div><div><strong>Fasting glucose + HbA1c</strong> — Standard metabolic baseline. Not included in CBC panel.</div></div>
+      <div class="action-item"><div class="action-dot dot-amber"></div><div><strong>FRAX fracture risk score</strong> — Should be calculated by Dr. Gulati using DEXA + clinical risk factors to guide treatment decision.</div></div>
+    </div>
+  </section>
+
+  <!-- GENETICS -->
+  <section class="section" id="genetics">
+    <div class="section-title">
+      <div class="section-icon" style="background:var(--cream-dark);">&#9632;</div>
+      Genetic mutation analysis
+    </div>
+    <div style="font-size:13px;color:var(--ink-muted);margin-bottom:1.25rem;">Source: GenVue Discovery variant report. Heterozygous = one copy; Homozygous = two copies. All variants are research/educational — not diagnostic.</div>
+
+    <div class="gene-card priority-high">
+      <div class="gene-header">
+        <div>
+          <div class="gene-name">MTHFR C677T — heterozygous</div>
+          <div class="gene-rsid">rs1801133 &nbsp;·&nbsp; Chromosome 1 &nbsp;·&nbsp; Methylation / folate metabolism</div>
+        </div>
+        <span class="badge badge-red">High priority</span>
+      </div>
+      <div class="gene-body">The MTHFR enzyme converts dietary folate into active 5-methyltetrahydrofolate (5-MTHF) — the usable form that powers the methylation cycle. This cycle controls DNA repair, neurotransmitter production, homocysteine clearance, and detoxification. One copy of the thermolabile C677T variant reduces enzyme efficiency by ~35%. Standard folic acid (in fortified foods and cheap vitamins) cannot be processed and can block active folate receptors. Elevated homocysteine — the downstream result — is associated with cardiovascular disease and, critically, impaired bone collagen cross-linking that accelerates bone loss. Her MCV of 91 is reassuring (no acute anemia), but functional methylation deficit can exist without CBC changes — only a homocysteine blood test confirms impact.</div>
+      <div class="gene-tags">
+        <span class="gene-tag">Elevated homocysteine</span>
+        <span class="gene-tag">Cardiovascular risk</span>
+        <span class="gene-tag">Bone collagen impairment</span>
+        <span class="gene-tag">Impaired detoxification</span>
+        <span class="gene-tag">Folic acid intolerance</span>
+        <span class="gene-tag">Mood dysregulation</span>
+      </div>
+      <div class="gene-action" style="color:var(--teal);">Action: Start methylfolate (5-MTHF) + methyl-B12 + riboflavin (Thorne Methyl-Guard Plus). Avoid all synthetic folic acid. Test homocysteine urgently — especially relevant to bone health.</div>
+    </div>
+
+    <div class="gene-card priority-high">
+      <div class="gene-header">
+        <div>
+          <div class="gene-name">COMT Val158Met — homozygous (AA)</div>
+          <div class="gene-rsid">rs4680 &nbsp;·&nbsp; Chromosome 22 &nbsp;·&nbsp; Catecholamine + estrogen clearance</div>
+        </div>
+        <span class="badge badge-red">High priority</span>
+      </div>
+      <div class="gene-body">COMT (catechol-O-methyltransferase) breaks down dopamine, adrenaline, and critically — estrogen metabolites. Two copies of the slow variant means these compounds are cleared significantly more slowly than average. Post-menopausal bone loss is primarily driven by estrogen decline; impaired estrogen clearance may have created an atypical hormonal trajectory through menopause that contributed to her bone loss pattern. On the neurological side, this is the "worrier" genotype — heightened emotional memory, stronger stress response, and caffeine sensitivity. COMT requires magnesium as a cofactor and benefits directly from the methylation support in the MTHFR protocol.</div>
+      <div class="gene-tags">
+        <span class="gene-tag">Slow estrogen clearance</span>
+        <span class="gene-tag">Stress + anxiety sensitivity</span>
+        <span class="gene-tag">Caffeine sensitivity</span>
+        <span class="gene-tag">Dopamine accumulation</span>
+        <span class="gene-tag">Bone loss amplifier</span>
+      </div>
+      <div class="gene-action" style="color:var(--teal);">Action: Evening magnesium glycinate (COMT cofactor). Moderate caffeine. Stress management is gene-relevant, not just lifestyle advice.</div>
+    </div>
+
+    <div class="gene-card priority-mod">
+      <div class="gene-header">
+        <div>
+          <div class="gene-name">CFH His402 — heterozygous</div>
+          <div class="gene-rsid">rs1061170 &nbsp;·&nbsp; Chromosome 1 &nbsp;·&nbsp; Complement system / retinal inflammation</div>
+        </div>
+        <span class="badge badge-amber">Moderate-High</span>
+      </div>
+      <div class="gene-body">Complement Factor H regulates the immune system's complement cascade in the retina. This variant disrupts that regulation, allowing chronic low-grade inflammation to accumulate beneath the macula — responsible for sharp central vision. This is one of the strongest known genetic risk factors for age-related macular degeneration (AMD). AMD is silent in early stages; regular dilated eye exams are the only way to catch it before vision is affected. The AREDS2 supplement formula was specifically developed and clinically validated for patients with this exact genetic risk profile.</div>
+      <div class="gene-tags">
+        <span class="gene-tag">Age-related macular degeneration</span>
+        <span class="gene-tag">Basal laminar drusen</span>
+        <span class="gene-tag">Retinal inflammation</span>
+      </div>
+      <div class="gene-action" style="color:var(--amber);">Action: Annual dilated eye exam — urgent. Start Vision Defender AREDS2 formula immediately.</div>
+    </div>
+
+    <div class="gene-card priority-mod">
+      <div class="gene-header">
+        <div>
+          <div class="gene-name">ADD1 Gly460Trp — heterozygous</div>
+          <div class="gene-rsid">rs4961 &nbsp;·&nbsp; Chromosome 4 &nbsp;·&nbsp; Salt-sensitive blood pressure</div>
+        </div>
+        <span class="badge badge-amber">Watch</span>
+      </div>
+      <div class="gene-body">Alpha-adducin is involved in renal sodium reabsorption. This variant increases sodium retention, making Cathy's blood pressure more responsive to dietary salt intake than average — the same sodium load will raise her BP more than it would for most people. This doesn't mean she has hypertension, but it means dietary sodium is a more important cardiovascular lever for her than for the general population. Potassium intake (which physiologically counteracts sodium) and magnesium both directly support BP regulation for this genotype.</div>
+      <div class="gene-tags">
+        <span class="gene-tag">Salt-sensitive hypertension risk</span>
+        <span class="gene-tag">Increased sodium retention</span>
+      </div>
+      <div class="gene-action" style="color:var(--amber);">Action: Monitor dietary sodium. Potassium-rich diet (sweet potato, avocado, greens). Magnesium supports BP.</div>
+    </div>
+
+    <div class="gene-card priority-mod">
+      <div class="gene-header">
+        <div>
+          <div class="gene-name">AMPD1 — heterozygous carrier</div>
+          <div class="gene-rsid">rs17602729 &nbsp;·&nbsp; Chromosome 1 &nbsp;·&nbsp; Muscle energy metabolism</div>
+        </div>
+        <span class="badge badge-amber">Low-Moderate</span>
+      </div>
+      <div class="gene-body">Myoadenylate deaminase is involved in ATP energy recycling within muscle cells during exercise. As a heterozygous carrier, Cathy is unlikely to manifest full AMPD1 deficiency, but may experience faster exercise-induced muscle fatigue and slower recovery compared to age-matched peers. This is relevant for exercise planning — particularly resistance training, which is the most effective intervention for osteoporosis. Lower intensity with adequate rest between sessions is appropriate. CoQ10 and magnesium both support the energy metabolism pathway.</div>
+      <div class="gene-tags">
+        <span class="gene-tag">Exercise fatigue sensitivity</span>
+        <span class="gene-tag">Slower muscle recovery</span>
+      </div>
+      <div class="gene-action" style="color:var(--amber);">Action: Moderate-intensity resistance training for bone health. Allow full recovery. CoQ10 + magnesium support energy metabolism.</div>
+    </div>
+
+    <div class="gene-card priority-good">
+      <div class="gene-header">
+        <div>
+          <div class="gene-name">APOE rs7412 — homozygous ApoE2 (TT)</div>
+          <div class="gene-rsid">rs7412 &nbsp;·&nbsp; Chromosome 19 &nbsp;·&nbsp; Lipid metabolism / neurodegeneration</div>
+        </div>
+        <span class="badge badge-green">Protective</span>
+      </div>
+      <div class="gene-body">ApoE2 is the rarest and most protective APOE variant. Homozygous ApoE2 is associated with significantly reduced risk of Alzheimer's disease compared to the common ApoE3 or high-risk ApoE4 variants — this is genuinely good news. One monitoring consideration: homozygous ApoE2 can occasionally be associated with familial type 3 hyperlipoproteinemia (elevated triglycerides and cholesterol). A fasting lipid panel will confirm whether this is a factor — it's not on the current CBC panel.</div>
+      <div class="gene-tags">
+        <span class="gene-tag" style="background:var(--green-light);color:var(--green);">Reduced Alzheimer's risk</span>
+        <span class="gene-tag">Monitor lipid panel</span>
+        <span class="gene-tag">Type 3 hyperlipoproteinemia watch</span>
+      </div>
+      <div class="gene-action" style="color:var(--green);">Action: Annual fasting lipid panel. No urgent concern — this is the standout positive genetic finding.</div>
+    </div>
+  </section>
+
+  <!-- SUPPLEMENTS -->
+  <section class="section" id="supplements">
+    <div class="section-title">
+      <div class="section-icon" style="background:var(--teal-light); color:var(--teal);">&#9632;</div>
+      Supplement protocol
+    </div>
+
+    <div style="display:flex;gap:8px;margin-bottom:1.25rem;flex-wrap:wrap;">
+      <span class="badge badge-teal">5 products</span>
+      <span class="badge badge-gray">4–5 doses/day</span>
+      <span class="badge badge-gray">D3+K2 is liquid drops — zero extra pills</span>
+      <span class="badge badge-red">Updated for bone health / osteoporosis</span>
+    </div>
+
+    <div class="card">
+
+      <div class="supp-item">
+        <div class="supp-num">1</div>
+        <div style="flex:1;">
+          <div class="supp-name">Thorne Methyl-Guard Plus</div>
+          <div class="supp-brand">Thorne Research &nbsp;·&nbsp; 90 capsules &nbsp;·&nbsp; 1 capsule/day with morning meal</div>
+          <div class="supp-why">The MTHFR protocol in a single capsule. Contains active methylfolate (5-MTHF), methyl-B12, riboflavin B2 (the MTHFR cofactor that stabilizes the thermolabile enzyme), and active P5P B6 — plus betaine TMG for homocysteine support. This is the single most important supplement in the stack. Avoid any other folic acid while taking this.</div>
+          <div class="supp-tags">
+            <span class="supp-tag">5-MTHF methylfolate</span>
+            <span class="supp-tag">Methyl-B12</span>
+            <span class="supp-tag">Active B2 riboflavin</span>
+            <span class="supp-tag">P5P B6</span>
+            <span class="supp-tag">Betaine TMG</span>
+          </div>
+          <a class="buy-btn" href="https://www.amazon.com/dp/B00O5AHC4S" target="_blank">Buy on Amazon →</a>
+        </div>
+      </div>
+
+      <div class="supp-item">
+        <div class="supp-num">2</div>
+        <div style="flex:1;">
+          <div class="supp-name">Vision Defender AMD — Exact AREDS2 Formula</div>
+          <div class="supp-brand">Vision Defender &nbsp;·&nbsp; 90 tablets &nbsp;·&nbsp; 1 tablet/day with morning meal &nbsp;·&nbsp; once-daily vegan</div>
+          <div class="supp-why">Delivers the precise AREDS2 formulation used in landmark NIH clinical trials — directly indicated by the CFH macular degeneration risk variant. Unlike products "based on" AREDS2, this delivers the exact doses. Also covers daily Vitamin C (500mg) and Vitamin E (400 IU), eliminating two separate supplements.</div>
+          <div class="supp-tags">
+            <span class="supp-tag">Lutein 10mg</span>
+            <span class="supp-tag">Zeaxanthin 2mg</span>
+            <span class="supp-tag">Zinc 25mg</span>
+            <span class="supp-tag">Copper 2mg</span>
+            <span class="supp-tag">Vitamin C 500mg</span>
+            <span class="supp-tag">Vitamin E 400 IU</span>
+          </div>
+          <a class="buy-btn" href="https://www.amazon.com/dp/B017RM5BAC" target="_blank">Buy on Amazon →</a>
+        </div>
+      </div>
+
+      <div class="supp-item">
+        <div class="supp-num">3</div>
+        <div style="flex:1;">
+          <div class="supp-name">Qunol Plus Ubiquinol CoQ10 200mg + Omega-3</div>
+          <div class="supp-brand">Qunol &nbsp;·&nbsp; 90 softgels &nbsp;·&nbsp; 1 softgel/day with morning meal</div>
+          <div class="supp-why">Combines active ubiquinol CoQ10 (the pre-converted form better absorbed in older adults) with omega-3 EPA/DHA in one softgel. CoQ10 supports mitochondrial energy production (relevant for AMPD1 muscle fatigue) and cardiovascular function (MTHFR risk). Omega-3 provides anti-inflammatory support for retinal health (CFH) and cardiovascular protection.</div>
+          <div class="supp-tags">
+            <span class="supp-tag">Ubiquinol CoQ10 200mg</span>
+            <span class="supp-tag">Omega-3 EPA/DHA 250mg</span>
+          </div>
+          <a class="buy-btn" href="https://www.amazon.com/dp/B071V2C2JV" target="_blank">Buy on Amazon →</a>
+        </div>
+      </div>
+
+      <div class="supp-item">
+        <div class="supp-num">4</div>
+        <div style="flex:1;">
+          <div class="supp-name">Thorne Vitamin D3 + K2 Liquid</div>
+          <div class="supp-brand">Thorne Research &nbsp;·&nbsp; 1 fl oz (600 servings) &nbsp;·&nbsp; 2–4 drops/day in water or food &nbsp;·&nbsp; zero pills</div>
+          <div class="supp-why">Now the most bone-critical supplement given the osteoporosis diagnosis. D3 drives calcium absorption from the gut — without adequate D3, supplemental calcium is poorly utilized. K2 (MK-4 form) directs absorbed calcium to bone rather than arterial walls — essential when taking calcium. Two drops = 2,000 IU D3 + 400mcg K2. With the osteoporosis diagnosis, she may need 3–4 drops daily (3,000–4,000 IU) — confirm with Dr. Gulati after Vitamin D 25-OH blood test. Note: K2 can interfere with warfarin — check with provider if on blood thinners.</div>
+          <div class="supp-tags">
+            <span class="supp-tag">Vitamin D3 1,000 IU/drop</span>
+            <span class="supp-tag">Vitamin K2 MK-4 200mcg/drop</span>
+            <span class="supp-tag">Bone-critical</span>
+          </div>
+          <a class="buy-btn" href="https://www.amazon.com/dp/B0038NF8MG" target="_blank">Buy on Amazon →</a>
+        </div>
+      </div>
+
+      <div class="supp-item">
+        <div class="supp-num">5</div>
+        <div style="flex:1;">
+          <div class="supp-name">Qunol Magnesium Glycinate 300mg</div>
+          <div class="supp-brand">Qunol &nbsp;·&nbsp; 90 tablets &nbsp;·&nbsp; 1 tablet/evening with dinner</div>
+          <div class="supp-why">100% chelated glycinate form — most bioavailable, gentlest on stomach. Evening dose supports COMT enzyme function, salt-sensitive BP (ADD1), muscle recovery (AMPD1), and sleep quality. Also directly relevant to bone health: magnesium is a required cofactor for Vitamin D activation and is incorporated into bone matrix. The NOF recommends magnesium as part of bone health support. Take separately from calcium supplements (if added) for best absorption.</div>
+          <div class="supp-tags">
+            <span class="supp-tag">Magnesium glycinate 300mg</span>
+            <span class="supp-tag">COMT cofactor</span>
+            <span class="supp-tag">Bone health</span>
+          </div>
+          <a class="buy-btn" href="https://www.amazon.com/dp/B0DBMX2YPV" target="_blank">Buy on Amazon →</a>
+        </div>
+      </div>
+
+      <div class="timing-grid">
+        <div class="timing-col">
+          <div class="timing-label">Morning with food</div>
+          <div class="timing-row">1. Thorne Methyl-Guard Plus — 1 cap</div>
+          <div class="timing-row">2. Vision Defender AREDS2 — 1 tab</div>
+          <div class="timing-row">3. Qunol CoQ10 + Omega-3 — 1 softgel</div>
+          <div class="timing-row">4. D3+K2 Liquid — 2–4 drops in water</div>
+        </div>
+        <div class="timing-col">
+          <div class="timing-label">Evening with dinner</div>
+          <div class="timing-row">5. Magnesium Glycinate — 1 tablet</div>
+          <div style="margin-top:10px;font-size:12px;color:var(--ink-faint);line-height:1.6;">Take magnesium separately from other minerals for best absorption. D3+K2 dose may increase to 3–4 drops after Vit D blood test result.</div>
+        </div>
+      </div>
+
+      <div style="margin-top:1rem;padding:0.85rem 1rem;background:var(--amber-light);border-radius:var(--radius-sm);font-size:13px;color:var(--amber);line-height:1.6;">
+        <strong>Bone health note:</strong> The NOF recommends 1,200mg/day calcium for women over 50. Dietary calcium from food should be the primary source (dairy, leafy greens, fortified foods). If dietary intake is low, a supplemental calcium citrate (not carbonate) may need to be added as a 6th product. Discuss with Dr. Gulati alongside any pharmacologic intervention for osteoporosis.
+      </div>
+    </div>
+  </section>
+
+  <!-- ACTION PLAN -->
+  <section class="section" id="actions">
+    <div class="section-title">
+      <div class="section-icon" style="background:var(--red-light); color:var(--red);">&#9632;</div>
+      Action plan — prioritized
+    </div>
+
+    <div class="grid2">
+      <div class="card">
+        <div style="font-size:13px;font-weight:500;color:var(--red);margin-bottom:0.75rem;">Immediate (this month)</div>
+        <div class="action-item"><div class="action-dot dot-red"></div><div><strong>Schedule appointment with Dr. Gulati</strong> — Discuss pharmacologic intervention for osteoporosis (bisphosphonates, Prolia, etc.). Calculate FRAX fracture risk score. This is the #1 priority.</div></div>
+        <div class="action-item"><div class="action-dot dot-red"></div><div><strong>Schedule dilated eye exam</strong> — CFH AMD risk variant requires annual monitoring. AMD is asymptomatic until vision loss is irreversible.</div></div>
+        <div class="action-item"><div class="action-dot dot-red"></div><div><strong>Start supplement stack</strong> — All 5 products are available via Amazon links above. Begin with Methyl-Guard Plus and D3+K2 liquid as the two most impactful for bone + methylation.</div></div>
+        <div class="action-item"><div class="action-dot dot-red"></div><div><strong>Order homocysteine blood test</strong> — Can be ordered by APRN Schmidt. Target &lt;10 µmol/L. Elevated homocysteine is an independent fracture risk factor with osteoporosis.</div></div>
+      </div>
+
+      <div class="card">
+        <div style="font-size:13px;font-weight:500;color:var(--amber);margin-bottom:0.75rem;">Near-term (next 1–2 months)</div>
+        <div class="action-item"><div class="action-dot dot-amber"></div><div><strong>Vitamin D 25-OH blood test</strong> — Critical to determine correct D3 dosing. Bone health may require 3,000–4,000 IU/day vs. the baseline 2,000 IU. Need blood level to confirm.</div></div>
+        <div class="action-item"><div class="action-dot dot-amber"></div><div><strong>Fasting lipid panel</strong> — ApoE2 homozygous genotype warrants baseline lipid check (type 3 hyperlipoproteinemia watch).</div></div>
+        <div class="action-item"><div class="action-dot dot-amber"></div><div><strong>Begin resistance/weight-bearing exercise</strong> — The most evidence-backed lifestyle intervention for maintaining and building bone density. Resistance training 2–3x/week. Tai chi or balance work to reduce fall risk.</div></div>
+        <div class="action-item"><div class="action-dot dot-amber"></div><div><strong>Dietary sodium audit</strong> — ADD1 variant makes sodium more impactful on BP. Track sodium intake for 1–2 weeks. Target &lt;1,500mg/day given the variant.</div></div>
+      </div>
+
+      <div class="card">
+        <div style="font-size:13px;font-weight:500;color:var(--green);margin-bottom:0.75rem;">Lifestyle — ongoing</div>
+        <div class="action-item"><div class="action-dot dot-green"></div><div><strong>Avoid synthetic folic acid</strong> — Enriched bread, cereals, cheap multivitamins. With MTHFR, synthetic folic acid can block active folate receptors and worsen methylation.</div></div>
+        <div class="action-item"><div class="action-dot dot-green"></div><div><strong>Potassium-rich diet</strong> — Sweet potato, avocado, banana, leafy greens. Directly counters ADD1 salt-sensitive BP mechanism.</div></div>
+        <div class="action-item"><div class="action-dot dot-green"></div><div><strong>Moderate caffeine</strong> — COMT slow variant means caffeine is cleared more slowly, amplifying anxiety and stress response.</div></div>
+        <div class="action-item"><div class="action-dot dot-green"></div><div><strong>Fall prevention awareness</strong> — With femoral neck T-score of −2.7, a fall carries significant fracture risk. Good footwear, lighting, non-slip surfaces are all relevant.</div></div>
+        <div class="action-item"><div class="action-dot dot-green"></div><div><strong>ApoE2 protective — maintain cognitive health habits</strong> — Sleep quality, social connection, aerobic exercise, and stress reduction all support brain health alongside the favorable genotype.</div></div>
+      </div>
+
+      <div class="card">
+        <div style="font-size:13px;font-weight:500;color:var(--ink-muted);margin-bottom:0.75rem;">Monitoring schedule</div>
+        <div class="action-item"><div class="action-dot dot-red"></div><div><strong>DEXA follow-up — September 2027</strong> — Per referring physician recommendation. This will assess whether intervention is working.</div></div>
+        <div class="action-item"><div class="action-dot dot-amber"></div><div><strong>Homocysteine retest — 3–6 months</strong> — After starting methylation protocol, retest to confirm homocysteine is normalizing (target &lt;7 µmol/L).</div></div>
+        <div class="action-item"><div class="action-dot dot-amber"></div><div><strong>CBC + metabolic panel — annual</strong> — Continue with APRN Schmidt. Add homocysteine, Vitamin D, ferritin, lipids each year.</div></div>
+        <div class="action-item"><div class="action-dot dot-amber"></div><div><strong>Eye exam — annual</strong> — Dilated retinal exam given CFH AMD risk. Establish with ophthalmologist, not just optometrist.</div></div>
+        <div class="action-item"><div class="action-dot dot-green"></div><div><strong>Blood pressure — home monitoring</strong> — ADD1 variant warrants periodic home BP checks, especially if dietary sodium is variable.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="disclaimer">
+    This health profile dashboard was compiled from Cathy Huffman's GenVue Discovery genetic variant report, CBC with auto diff (The Villages Health, 3/25/2026 ordered by Dannette Schmidt, APRN), and DEXA bone densitometry report (Center for Advanced Health Care The Villages Health, 9/15/2025, referring physician Sweny Gulati, MD). It is for educational and informational purposes only and does not constitute medical advice, diagnosis, or treatment recommendation. All clinical decisions — including pharmacologic intervention for osteoporosis — must be made in consultation with Dr. Gulati and the clinical team. Supplement decisions should be reviewed with a qualified provider before starting, particularly the methylfolate/B12 protocol which can interact with certain medications. Genetic variants indicate risk factors and predispositions — not certainties. Dashboard compiled April 2026.
+  </div>
+
+</main>
+
+<script>
+  const links = document.querySelectorAll('nav a');
+  const sections = document.querySelectorAll('section[id]');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 100) current = s.id;
+    });
+    links.forEach(a => {
+      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+    });
+  });
+</script>
+
+</body>
+</html>
