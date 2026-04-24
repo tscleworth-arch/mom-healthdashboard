@@ -812,111 +812,281 @@
       <div class="section-icon" style="background:var(--cream-dark);">&#9632;</div>
       Genetic mutation analysis
     </div>
-    <div style="font-size:13px;color:var(--ink-muted);margin-bottom:1.25rem;">Source: GenVue Discovery variant report. Heterozygous = one copy; Homozygous = two copies. All variants are research/educational — not diagnostic.</div>
+    <div style="font-size:13px;color:var(--ink-muted);margin-bottom:0.5rem;">Source: GenVue Discovery variant report. Analyzed via ClinVar (expert panel reviewed). Heterozygous = one copy of variant; Homozygous = two copies. All variants are for research and educational purposes — not diagnostic. ClinVar significance ratings are noted where available.</div>
+    <div style="font-size:13px;color:var(--ink-muted);margin-bottom:1.25rem;">Priority legend: <span class="badge badge-red" style="font-size:11px;">High</span> = actionable immediately &nbsp; <span class="badge badge-amber" style="font-size:11px;">Moderate</span> = monitor + mitigate &nbsp; <span class="badge badge-green" style="font-size:11px;">Protective</span> = favorable variant</div>
 
+    <!-- MTHFR -->
     <div class="gene-card priority-high">
       <div class="gene-header">
         <div>
-          <div class="gene-name">MTHFR C677T — heterozygous</div>
-          <div class="gene-rsid">rs1801133 &nbsp;·&nbsp; Chromosome 1 &nbsp;·&nbsp; Methylation / folate metabolism</div>
+          <div class="gene-name">MTHFR C677T — heterozygous &nbsp;<span style="font-size:12px;font-weight:300;color:var(--ink-faint);">genotype: TC</span></div>
+          <div class="gene-rsid">rs1801133 &nbsp;·&nbsp; Chromosome 1:11856378 &nbsp;·&nbsp; Gene: MTHFR &nbsp;·&nbsp; Variant: c.665C&gt;T (p.Ala222Val) &nbsp;·&nbsp; CADD score: 25.5 &nbsp;·&nbsp; Freq: 24.5%</div>
         </div>
         <span class="badge badge-red">High priority</span>
       </div>
-      <div class="gene-body">The MTHFR enzyme converts dietary folate into active 5-methyltetrahydrofolate (5-MTHF) — the usable form that powers the methylation cycle. This cycle controls DNA repair, neurotransmitter production, homocysteine clearance, and detoxification. One copy of the thermolabile C677T variant reduces enzyme efficiency by ~35%. Standard folic acid (in fortified foods and cheap vitamins) cannot be processed and can block active folate receptors. Elevated homocysteine — the downstream result — is associated with cardiovascular disease and, critically, impaired bone collagen cross-linking that accelerates bone loss. Her MCV of 91 is reassuring (no acute anemia), but functional methylation deficit can exist without CBC changes — only a homocysteine blood test confirms impact.</div>
+      <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:0.75rem;">
+        <span class="badge badge-amber" style="font-size:11px;">ClinVar: Conflicting interpretations / risk factor</span>
+        <span class="badge badge-gray" style="font-size:11px;">Expert panel reviewed · 10 submitters</span>
+        <span class="badge badge-gray" style="font-size:11px;">OMIM: 607093.0003</span>
+      </div>
+
+      <div class="gene-body">
+        <strong style="color:var(--ink);">What this gene does:</strong> MTHFR (methylenetetrahydrofolate reductase) is the enzyme responsible for the critical conversion of dietary folate into its biologically active form: 5-methyltetrahydrofolate (5-MTHF). This active folate is the key methyl donor that powers the methylation cycle — the body's fundamental biochemical on/off switch governing DNA synthesis and repair, neurotransmitter production, detoxification, immune regulation, and homocysteine clearance.
+        <br><br>
+        <strong style="color:var(--ink);">What this variant does:</strong> The C677T polymorphism (also known as the "thermolabile" variant, or A222V at the protein level) encodes a form of the MTHFR enzyme that is structurally less stable at body temperature, causing it to unfold and lose activity. As a heterozygous carrier (one copy), Cathy's enzyme efficiency is reduced by approximately 35% compared to the wildtype. This is clinically meaningful but less severe than the TT homozygous state (two copies), which reduces efficiency by 60–70%.
+        <br><br>
+        <strong style="color:var(--ink);">The folic acid problem:</strong> Standard synthetic folic acid — found in fortified breads, cereals, orange juice, prenatal vitamins, and most cheap multivitamins — must pass through MTHFR to be converted into 5-MTHF before the body can use it. With reduced MTHFR activity, unmetabolized folic acid (UMFA) accumulates and can actually competitively block the folate receptors, paradoxically worsening the deficiency it was meant to treat. This is why the supplement protocol specifies methylfolate (5-MTHF) — the pre-converted active form that bypasses the MTHFR step entirely.
+        <br><br>
+        <strong style="color:var(--ink);">Downstream consequences — homocysteine:</strong> When folate metabolism is impaired, the amino acid homocysteine cannot be remethylated back to methionine and accumulates in the blood. Elevated homocysteine (hyperhomocysteinemia) is an independent risk factor for: cardiovascular disease (endothelial damage, atherosclerosis), venous thrombosis, and — critically given her DEXA results — osteoporotic fractures. Elevated homocysteine directly impairs bone collagen cross-linking, reducing bone matrix quality independent of bone density measurements. Her MCV of 91 (mid-range, normal) is reassuring since MTHFR-driven B12/folate deficiency classically causes macrocytic anemia with elevated MCV. However, functional methylation deficits can be present for years before CBC changes appear. Only a serum homocysteine test will confirm the actual impact.
+        <br><br>
+        <strong style="color:var(--ink);">Drug interactions to know:</strong> Methotrexate (used for rheumatoid arthritis, psoriasis, and cancer) works by inhibiting folate metabolism — folate supplementation can reduce methotrexate toxicity in inflammatory conditions but may interfere with its anti-cancer mechanism. If Cathy is ever prescribed methotrexate for any reason, her provider must be informed of MTHFR status and current methylfolate supplementation. Also relevant: the MTHFR variant affects response to certain antidepressants (SSRIs) since serotonin synthesis depends on methylation.
+        <br><br>
+        <strong style="color:var(--ink);">ClinVar-associated conditions for this variant:</strong> Gastrointestinal stromal tumor risk (conflicting evidence), neoplasm of stomach (susceptibility), neural tube defects (folate-sensitive), venous thrombosis, and MTHFR deficiency thermolabile type. The clinical significance is listed as "conflicting interpretations of pathogenicity" — meaning experts disagree on severity, which is typical for common functional polymorphisms like this one. It should be treated as a meaningful risk modifier, not a disease-causing mutation.
+      </div>
       <div class="gene-tags">
-        <span class="gene-tag">Elevated homocysteine</span>
-        <span class="gene-tag">Cardiovascular risk</span>
+        <span class="gene-tag">Elevated homocysteine risk</span>
+        <span class="gene-tag">Cardiovascular risk factor</span>
         <span class="gene-tag">Bone collagen impairment</span>
+        <span class="gene-tag">Fracture risk amplifier</span>
         <span class="gene-tag">Impaired detoxification</span>
+        <span class="gene-tag">Mood + neurotransmitter effects</span>
         <span class="gene-tag">Folic acid intolerance</span>
-        <span class="gene-tag">Mood dysregulation</span>
+        <span class="gene-tag">Venous thrombosis susceptibility</span>
+        <span class="gene-tag">Drug metabolism (methotrexate)</span>
       </div>
-      <div class="gene-action" style="color:var(--teal);">Action: Start methylfolate (5-MTHF) + methyl-B12 + riboflavin (Thorne Methyl-Guard Plus). Avoid all synthetic folic acid. Test homocysteine urgently — especially relevant to bone health.</div>
+      <div class="gene-action" style="color:var(--teal);">Action: Start Thorne Methyl-Guard Plus (5-MTHF + methyl-B12 + riboflavin + P5P + TMG) immediately. Eliminate all synthetic folic acid from diet and any other supplements. Order serum homocysteine test urgently — target &lt;10 µmol/L (optimal &lt;7). Retest homocysteine 3–6 months after starting protocol.</div>
     </div>
 
+    <!-- COMT -->
     <div class="gene-card priority-high">
       <div class="gene-header">
         <div>
-          <div class="gene-name">COMT Val158Met — homozygous (AA)</div>
-          <div class="gene-rsid">rs4680 &nbsp;·&nbsp; Chromosome 22 &nbsp;·&nbsp; Catecholamine + estrogen clearance</div>
+          <div class="gene-name">COMT Val158Met — homozygous &nbsp;<span style="font-size:12px;font-weight:300;color:var(--ink-faint);">genotype: AA (slow-slow)</span></div>
+          <div class="gene-rsid">rs4680 &nbsp;·&nbsp; Chromosome 22:19951271 &nbsp;·&nbsp; Gene: COMT &nbsp;·&nbsp; Variant: c.472G&gt;A (p.Val158Met) &nbsp;·&nbsp; CADD score: 13.15 &nbsp;·&nbsp; Freq: 36.9%</div>
         </div>
         <span class="badge badge-red">High priority</span>
       </div>
-      <div class="gene-body">COMT (catechol-O-methyltransferase) breaks down dopamine, adrenaline, and critically — estrogen metabolites. Two copies of the slow variant means these compounds are cleared significantly more slowly than average. Post-menopausal bone loss is primarily driven by estrogen decline; impaired estrogen clearance may have created an atypical hormonal trajectory through menopause that contributed to her bone loss pattern. On the neurological side, this is the "worrier" genotype — heightened emotional memory, stronger stress response, and caffeine sensitivity. COMT requires magnesium as a cofactor and benefits directly from the methylation support in the MTHFR protocol.</div>
-      <div class="gene-tags">
-        <span class="gene-tag">Slow estrogen clearance</span>
-        <span class="gene-tag">Stress + anxiety sensitivity</span>
-        <span class="gene-tag">Caffeine sensitivity</span>
-        <span class="gene-tag">Dopamine accumulation</span>
-        <span class="gene-tag">Bone loss amplifier</span>
+      <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:0.75rem;">
+        <span class="badge badge-amber" style="font-size:11px;">ClinVar: Drug response / functional polymorphism</span>
+        <span class="badge badge-gray" style="font-size:11px;">Expert panel reviewed · 3 submitters</span>
+        <span class="badge badge-gray" style="font-size:11px;">OMIM: 116790.0001</span>
+        <span class="badge badge-gray" style="font-size:11px;">598 PubMed publications</span>
       </div>
-      <div class="gene-action" style="color:var(--teal);">Action: Evening magnesium glycinate (COMT cofactor). Moderate caffeine. Stress management is gene-relevant, not just lifestyle advice.</div>
+
+      <div class="gene-body">
+        <strong style="color:var(--ink);">What this gene does:</strong> COMT (catechol-O-methyltransferase) is a key enzyme in the catecholamine degradation pathway. It breaks down dopamine, epinephrine (adrenaline), norepinephrine, and — critically — catechol estrogens (the metabolized forms of estradiol and estrone produced in peripheral tissues). COMT uses SAM (S-adenosylmethionine) as a methyl donor, which means it is directly dependent on the methylation cycle also affected by the MTHFR variant. These two variants compound each other.
+        <br><br>
+        <strong style="color:var(--ink);">What this variant does:</strong> The Val158Met polymorphism substitutes a methionine for a valine at position 158, reducing COMT enzyme thermostability. Homozygous AA (two copies of the Met allele) produces the slowest COMT activity — approximately 3–4x lower enzyme activity than the high-activity GG genotype. This is a codominant variant, meaning two slow copies produce a meaningfully different phenotype than one. Cathy carries the slowest possible COMT configuration.
+        <br><br>
+        <strong style="color:var(--ink);">Neurological implications — the "worrier" genotype:</strong> Because dopamine is cleared more slowly in the prefrontal cortex, slow-COMT individuals typically demonstrate stronger working memory, better focused attention under low-stress conditions, and more persistent emotional memories. However, under high stress, the prefrontal cortex becomes flooded with dopamine and norepinephrine that cannot be cleared fast enough, impairing executive function and amplifying the stress response. This is sometimes called the "warrior vs. worrier" distinction — slow COMT provides cognitive advantages in stable environments but vulnerability under pressure. She is likely more sensitive to stressful events, may have a harder time "letting go" of negative memories, and may experience anxiety in ways that feel disproportionate to others.
+        <br><br>
+        <strong style="color:var(--ink);">Estrogen and bone health implications:</strong> This is the COMT connection that directly ties into her DEXA findings. COMT is responsible for clearing catechol estrogens — particularly 4-hydroxyestradiol, a reactive estrogen metabolite. When COMT is slow, these metabolites linger and can create oxidative stress. More importantly in the context of bone health: estrogen is the primary regulator of osteoclast (bone-removing cell) activity in women. Post-menopausal estrogen decline removes this brake, causing accelerated bone resorption. Slow estrogen clearance through the premenopausal years may have altered her hormonal trajectory through perimenopause in ways that compounded bone density loss. This is a plausible contributing mechanism to her femoral neck T-score of −2.7.
+        <br><br>
+        <strong style="color:var(--ink);">Caffeine and substance sensitivity:</strong> Caffeine inhibits adenosine receptors and indirectly elevates dopamine and norepinephrine — compounds that are already slow to clear with COMT. This creates a prolonged stimulant effect and heightened anxiety response to caffeine that most people don't experience. Similarly, alcohol, high-catechol foods (dark chocolate, coffee, certain teas, cruciferous vegetables in very large amounts), and dopaminergic medications will all have amplified or prolonged effects.
+        <br><br>
+        <strong style="color:var(--ink);">Pharmacogenomic relevance:</strong> ClinVar records nicotine response (efficacy) as an associated drug response — COMT genotype affects how well nicotine replacement therapy works. The variant is also referenced in schizophrenia research (though the effect size is small at the population level). More practically: opioid pain medications and certain antidepressants (particularly those affecting dopamine or norepinephrine) may require dose adjustments given altered catecholamine clearance.
+        <br><br>
+        <strong style="color:var(--ink);">The MTHFR-COMT compounding effect:</strong> COMT requires SAM (S-adenosylmethionine) as its methyl donor — and SAM production is directly impaired by poor methylation from MTHFR dysfunction. This means her two high-priority variants amplify each other: MTHFR reduces methyl availability, which further impairs an already slow COMT. Supporting methylation with 5-MTHF + methyl-B12 (the MTHFR protocol) simultaneously helps COMT function. Magnesium is a direct COMT cofactor and should be prioritized.
+      </div>
+      <div class="gene-tags">
+        <span class="gene-tag">Slow dopamine clearance</span>
+        <span class="gene-tag">Slow estrogen metabolite clearance</span>
+        <span class="gene-tag">Stress + anxiety amplification</span>
+        <span class="gene-tag">Caffeine hypersensitivity</span>
+        <span class="gene-tag">Bone loss amplifier (estrogen)</span>
+        <span class="gene-tag">Pain sensitivity (altered)</span>
+        <span class="gene-tag">Nicotine response variant</span>
+        <span class="gene-tag">Compounded by MTHFR</span>
+        <span class="gene-tag">"Worrier" cognitive phenotype</span>
+      </div>
+      <div class="gene-action" style="color:var(--teal);">Action: Evening magnesium glycinate — COMT's direct cofactor. Moderate caffeine strictly (not just "a little less"). Stress management is genetically medically relevant, not optional lifestyle advice. The MTHFR methylation protocol (Methyl-Guard Plus) simultaneously helps COMT by restoring SAM availability. Avoid high-dose catechol supplements (high-dose green tea extract, certain adrenal supplements).</div>
     </div>
 
+    <!-- CFH -->
     <div class="gene-card priority-mod">
       <div class="gene-header">
         <div>
-          <div class="gene-name">CFH His402 — heterozygous</div>
-          <div class="gene-rsid">rs1061170 &nbsp;·&nbsp; Chromosome 1 &nbsp;·&nbsp; Complement system / retinal inflammation</div>
+          <div class="gene-name">CFH His402Tyr — heterozygous &nbsp;<span style="font-size:12px;font-weight:300;color:var(--ink-faint);">genotype: TC</span></div>
+          <div class="gene-rsid">rs1061170 &nbsp;·&nbsp; Chromosome 1:196659237 &nbsp;·&nbsp; Gene: CFH &nbsp;·&nbsp; Variant: c.1204C= (p.His402=) &nbsp;·&nbsp; Freq: 26.7% &nbsp;·&nbsp; OMIM: 134370.0008</div>
         </div>
         <span class="badge badge-amber">Moderate-High</span>
       </div>
-      <div class="gene-body">Complement Factor H regulates the immune system's complement cascade in the retina. This variant disrupts that regulation, allowing chronic low-grade inflammation to accumulate beneath the macula — responsible for sharp central vision. This is one of the strongest known genetic risk factors for age-related macular degeneration (AMD). AMD is silent in early stages; regular dilated eye exams are the only way to catch it before vision is affected. The AREDS2 supplement formula was specifically developed and clinically validated for patients with this exact genetic risk profile.</div>
+      <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:0.75rem;">
+        <span class="badge badge-red" style="font-size:11px;">ClinVar: Pathogenic, risk factor</span>
+        <span class="badge badge-gray" style="font-size:11px;">Expert reviewed · 1 submitter</span>
+        <span class="badge badge-gray" style="font-size:11px;">301 PubMed publications</span>
+        <span class="badge badge-amber" style="font-size:11px;">Autosomal dominant — may manifest as carrier</span>
+      </div>
+
+      <div class="gene-body">
+        <strong style="color:var(--ink);">What this gene does:</strong> Complement Factor H (CFH) is a critical regulator of the alternative pathway of the complement immune system. The complement system is a cascade of proteins that helps clear pathogens, dead cells, and cellular debris. In the retina, tight regulation of complement activity is essential — the retina has minimal blood supply and cannot afford inflammatory damage. CFH acts as the primary brake on complement activation in retinal tissue, preventing the immune system from attacking the retina's own cells.
+        <br><br>
+        <strong style="color:var(--ink);">What this variant does:</strong> The His402Tyr variant (histidine to tyrosine at position 402) alters a key binding domain in the CFH protein, reducing its ability to bind to C-reactive protein (CRP) and heparin in the extracellular matrix of the retina. This weakens CFH's regulatory function and allows the complement cascade to proceed unchecked in retinal tissue — particularly in Bruch's membrane beneath the retinal pigment epithelium (RPE). The result is chronic, low-grade complement-mediated inflammation in the macula that accumulates over decades.
+        <br><br>
+        <strong style="color:var(--ink);">Age-related macular degeneration (AMD):</strong> AMD is a leading cause of irreversible vision loss in adults over 60, affecting central (macular) vision needed for reading, driving, recognizing faces, and detailed work. It does not affect peripheral vision or night vision in its early stages, which is exactly why it can progress silently for years before the person notices anything is wrong. AMD occurs in two forms:
+        <br>&nbsp;&nbsp;• <strong style="color:var(--ink);">Dry AMD (85–90% of cases):</strong> Characterized by accumulation of yellowish deposits called drusen beneath the retina, and slow progressive loss of photoreceptors. Vision loss is gradual, often over years to decades.
+        <br>&nbsp;&nbsp;• <strong style="color:var(--ink);">Wet AMD (10–15% of cases):</strong> Characterized by growth of abnormal, fragile blood vessels beneath the macula (choroidal neovascularization) that leak blood and fluid. This form progresses rapidly — vision loss can occur within weeks. It is the form responsible for most severe AMD-related blindness.
+        <br><br>
+        <strong style="color:var(--ink);">Basal laminar drusen:</strong> This variant is also classified as a pathogenic risk factor for basal laminar drusen — a specific type of drusen deposit in which abnormal material collects between the retinal pigment epithelium and Bruch's membrane. These are associated with early AMD development and are a precursor marker for disease progression.
+        <br><br>
+        <strong style="color:var(--ink);">Autosomal dominant note:</strong> Because the conditions associated with this variant (AMD and basal laminar drusen) have autosomal dominant inheritance patterns, carrying even one copy of the risk allele (as Cathy does, heterozygous) is sufficient to confer meaningful increased risk — she is not simply a "carrier" in the recessive sense. Risk is elevated, though penetrance is incomplete (not everyone with the variant develops AMD).
+        <br><br>
+        <strong style="color:var(--ink);">Why annual dilated eye exams are non-negotiable:</strong> AMD produces no pain, no early symptoms, and no changes visible to the person until significant macular damage has occurred. A dilated retinal exam by an ophthalmologist (not merely a standard optometrist refraction exam) allows visualization of drusen, RPE changes, and early neovascularization. When caught early — even pre-symptomatically — anti-VEGF injections can halt wet AMD progression. Once central vision is lost from advanced AMD, it cannot be restored. The exam is the only intervention that changes the outcome.
+        <br><br>
+        <strong style="color:var(--ink);">The AREDS2 connection:</strong> The Age-Related Eye Disease Study 2 (AREDS2) was a landmark 5-year NIH clinical trial specifically designed to test whether nutritional supplementation could slow AMD progression in genetically at-risk patients. The trial demonstrated that the specific AREDS2 formulation — lutein 10mg + zeaxanthin 2mg + vitamin C 500mg + vitamin E 400 IU + zinc 25mg + copper 2mg — reduced the risk of progression to advanced AMD by approximately 25% in at-risk patients. This is one of the few cases in nutrition where a specific supplement formulation has genuine Level I evidence for a specific genetic risk profile.
+      </div>
       <div class="gene-tags">
         <span class="gene-tag">Age-related macular degeneration</span>
+        <span class="gene-tag">Wet AMD risk</span>
+        <span class="gene-tag">Dry AMD risk</span>
         <span class="gene-tag">Basal laminar drusen</span>
+        <span class="gene-tag">Complement dysregulation</span>
         <span class="gene-tag">Retinal inflammation</span>
+        <span class="gene-tag">AREDS2 indicated</span>
       </div>
-      <div class="gene-action" style="color:var(--amber);">Action: Annual dilated eye exam — urgent. Start Vision Defender AREDS2 formula immediately.</div>
+      <div class="gene-action" style="color:var(--amber);">Action: Schedule dilated eye exam with ophthalmologist immediately — this should be annual going forward. Start Vision Defender Exact AREDS2 Formula (lutein 10mg, zeaxanthin 2mg, zinc 25mg, copper 2mg, vitamin C 500mg, vitamin E 400 IU) — the only supplement with Level I clinical evidence for this specific risk variant. Omega-3 EPA/DHA also supports retinal health through anti-inflammatory mechanisms.</div>
     </div>
 
+    <!-- ADD1 -->
     <div class="gene-card priority-mod">
       <div class="gene-header">
         <div>
-          <div class="gene-name">ADD1 Gly460Trp — heterozygous</div>
-          <div class="gene-rsid">rs4961 &nbsp;·&nbsp; Chromosome 4 &nbsp;·&nbsp; Salt-sensitive blood pressure</div>
+          <div class="gene-name">ADD1 Gly460Trp — heterozygous &nbsp;<span style="font-size:12px;font-weight:300;color:var(--ink-faint);">genotype: TG</span></div>
+          <div class="gene-rsid">rs4961 &nbsp;·&nbsp; Chromosome 4:2906707 &nbsp;·&nbsp; Gene: ADD1 &nbsp;·&nbsp; Variant: c.1378G&gt;T (p.Gly460Trp) &nbsp;·&nbsp; CADD score: 31 &nbsp;·&nbsp; Freq: 20.8% &nbsp;·&nbsp; OMIM: 102680.0001</div>
         </div>
         <span class="badge badge-amber">Watch</span>
       </div>
-      <div class="gene-body">Alpha-adducin is involved in renal sodium reabsorption. This variant increases sodium retention, making Cathy's blood pressure more responsive to dietary salt intake than average — the same sodium load will raise her BP more than it would for most people. This doesn't mean she has hypertension, but it means dietary sodium is a more important cardiovascular lever for her than for the general population. Potassium intake (which physiologically counteracts sodium) and magnesium both directly support BP regulation for this genotype.</div>
-      <div class="gene-tags">
-        <span class="gene-tag">Salt-sensitive hypertension risk</span>
-        <span class="gene-tag">Increased sodium retention</span>
+      <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:0.75rem;">
+        <span class="badge badge-amber" style="font-size:11px;">ClinVar: Drug response / pathogenic (insufficient evidence)</span>
+        <span class="badge badge-gray" style="font-size:11px;">Expert panel reviewed · 2 submitters</span>
+        <span class="badge badge-gray" style="font-size:11px;">45 PubMed publications</span>
       </div>
-      <div class="gene-action" style="color:var(--amber);">Action: Monitor dietary sodium. Potassium-rich diet (sweet potato, avocado, greens). Magnesium supports BP.</div>
+
+      <div class="gene-body">
+        <strong style="color:var(--ink);">What this gene does:</strong> ADD1 (alpha-adducin) encodes a cytoskeletal protein expressed in kidney tubular cells. Alpha-adducin plays a regulatory role in the activity of the Na+/K+-ATPase pump — the primary transport protein responsible for sodium reabsorption from urine back into the bloodstream in the renal tubules. More sodium reabsorption means less sodium is excreted in urine, and higher sodium levels remain in the blood, driving fluid retention and elevated blood pressure.
+        <br><br>
+        <strong style="color:var(--ink);">What this variant does:</strong> The Gly460Trp substitution (glycine replaced by tryptophan at position 460) increases the activity of the Na+/K+-ATPase pump in the kidney. This results in enhanced sodium reabsorption — meaning Cathy's kidneys retain more sodium per unit of dietary intake than an average person would. The consequence is salt-sensitive hypertension: her blood pressure responds more dramatically to sodium intake than most people's does. The same meal that causes a mild transient BP rise in someone without this variant may cause a larger and longer-lasting elevation in Cathy.
+        <br><br>
+        <strong style="color:var(--ink);">Clinical context:</strong> This variant does not cause hypertension automatically — it is a susceptibility gene, not a disease gene. Many people with ADD1 Gly460Trp have normal blood pressure if they maintain a low-sodium diet. However, it means that dietary sodium management is a higher-priority cardiovascular tool for Cathy than it would be for the general population. The American Heart Association recommends under 2,300mg sodium/day for the general population; for someone with ADD1 sensitivity, a stricter target closer to 1,500mg/day may be more appropriate and should be discussed with her provider.
+        <br><br>
+        <strong style="color:var(--ink);">Pharmacogenomic relevance:</strong> ClinVar documents this variant as specifically affecting response to furosemide (a loop diuretic) and spironolactone. Carriers of the Trp460 allele demonstrate enhanced blood pressure response to these diuretics compared to Gly460 individuals — they work better. If Cathy ever requires antihypertensive medication, this genotype suggests thiazide diuretics and loop diuretics may be particularly effective choices.
+        <br><br>
+        <strong style="color:var(--ink);">Dietary counters:</strong> Potassium directly antagonizes sodium's effect at the kidney level through a separate transport mechanism. A potassium-rich diet (sweet potatoes, avocado, bananas, leafy greens, legumes, salmon) functionally blunts the ADD1 variant's sodium-retention effect. Magnesium also supports healthy vascular tone and is a natural vasodilator, complementing the blood pressure management strategy.
+      </div>
+      <div class="gene-tags">
+        <span class="gene-tag">Salt-sensitive hypertension</span>
+        <span class="gene-tag">Enhanced sodium retention</span>
+        <span class="gene-tag">Elevated diuretic response</span>
+        <span class="gene-tag">Cardiovascular risk modifier</span>
+      </div>
+      <div class="gene-action" style="color:var(--amber);">Action: Dietary sodium target of 1,500mg/day or less (stricter than general population guidelines). Prioritize potassium-rich foods daily. Magnesium glycinate (already in stack) supports vascular tone. Home BP monitoring is worthwhile — track BP in response to higher-sodium days to understand personal sensitivity. Inform provider of ADD1 variant if antihypertensive medication is ever prescribed; diuretics are genetically indicated.</div>
     </div>
 
+    <!-- AMPD1 -->
     <div class="gene-card priority-mod">
       <div class="gene-header">
         <div>
-          <div class="gene-name">AMPD1 — heterozygous carrier</div>
-          <div class="gene-rsid">rs17602729 &nbsp;·&nbsp; Chromosome 1 &nbsp;·&nbsp; Muscle energy metabolism</div>
+          <div class="gene-name">AMPD1 — heterozygous carrier &nbsp;<span style="font-size:12px;font-weight:300;color:var(--ink-faint);">genotype: AG</span></div>
+          <div class="gene-rsid">rs17602729 &nbsp;·&nbsp; Chromosome 1:115236057 &nbsp;·&nbsp; Gene: AMPD1 &nbsp;·&nbsp; CADD score: 36 (uncommon) &nbsp;·&nbsp; Freq: 3.8% &nbsp;·&nbsp; OMIM: 102770.0001</div>
         </div>
         <span class="badge badge-amber">Low-Moderate</span>
       </div>
-      <div class="gene-body">Myoadenylate deaminase is involved in ATP energy recycling within muscle cells during exercise. As a heterozygous carrier, Cathy is unlikely to manifest full AMPD1 deficiency, but may experience faster exercise-induced muscle fatigue and slower recovery compared to age-matched peers. This is relevant for exercise planning — particularly resistance training, which is the most effective intervention for osteoporosis. Lower intensity with adequate rest between sessions is appropriate. CoQ10 and magnesium both support the energy metabolism pathway.</div>
-      <div class="gene-tags">
-        <span class="gene-tag">Exercise fatigue sensitivity</span>
-        <span class="gene-tag">Slower muscle recovery</span>
+      <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:0.75rem;">
+        <span class="badge badge-amber" style="font-size:11px;">ClinVar: Conflicting interpretations / other</span>
+        <span class="badge badge-gray" style="font-size:11px;">Criteria provided · 6 submitters</span>
+        <span class="badge badge-gray" style="font-size:11px;">17 PubMed publications</span>
+        <span class="badge badge-teal" style="font-size:11px;">Uncommon variant (3.8% frequency)</span>
+        <span class="badge badge-green" style="font-size:11px;">Autosomal recessive — likely carrier only</span>
       </div>
-      <div class="gene-action" style="color:var(--amber);">Action: Moderate-intensity resistance training for bone health. Allow full recovery. CoQ10 + magnesium support energy metabolism.</div>
+
+      <div class="gene-body">
+        <strong style="color:var(--ink);">What this gene does:</strong> AMPD1 (adenosine monophosphate deaminase 1) encodes the enzyme myoadenylate deaminase, which is expressed specifically in skeletal muscle. This enzyme plays a central role in the purine nucleotide cycle — the energy management system within muscle cells. During intense exercise, when ATP (adenosine triphosphate) is rapidly consumed and AMP (adenosine monophosphate) accumulates, myoadenylate deaminase converts AMP to IMP (inosine monophosphate) and ammonia. This reaction helps regenerate ATP more efficiently and maintains the energy charge within muscle cells during high-demand activity.
+        <br><br>
+        <strong style="color:var(--ink);">What this variant does:</strong> This variant (rs17602729) causes a loss-of-function change in AMPD1. In the homozygous state (two copies), it produces myoadenylate deaminase deficiency (MMDD) — the most prevalent genetic enzyme deficiency in humans, affecting approximately 1–2% of the population. Full MMDD can manifest as exercise-induced muscle pain, weakness, premature fatigue, and occasionally rhabdomyolysis or elevated creatine kinase after exertion.
+        <br><br>
+        <strong style="color:var(--ink);">Carrier status (heterozygous — Cathy's situation):</strong> As a heterozygous carrier (one copy), Cathy has one functional and one non-functional AMPD1 gene. Because MMDD is autosomal recessive, carriers typically do not manifest the full condition. However, research suggests that heterozygous carriers may experience milder versions of exercise-related symptoms — particularly faster-than-expected muscle fatigue onset and slower recovery between exercise sessions. This is consistent with a partial reduction in muscle energy recycling efficiency.
+        <br><br>
+        <strong style="color:var(--ink);">Practical exercise implications:</strong> This is particularly relevant given the osteoporosis diagnosis — resistance training is the most evidence-backed lifestyle intervention for building and preserving bone density. The AMPD1 carrier status doesn't mean Cathy should avoid exercise, but it does mean she should expect and plan for:
+        <br>&nbsp;&nbsp;• Earlier fatigue onset than peers of similar fitness level
+        <br>&nbsp;&nbsp;• More pronounced post-exercise soreness (DOMS) and longer recovery windows
+        <br>&nbsp;&nbsp;• Potentially elevated creatine kinase after heavy sessions
+        <br>&nbsp;&nbsp;• Better results from lower-intensity, higher-frequency training than from high-intensity infrequent sessions
+        <br><br>
+        <strong style="color:var(--ink);">Cardiovascular implications:</strong> The report notes that a small percentage of homozygous-deficient individuals display increased predisposition to stress-related cardiovascular ailments including heart disease and stroke. As a carrier, this risk is attenuated, but it underscores the importance of not overexerting without adequate recovery — cardiac muscle also uses the purine nucleotide cycle under stress. CoQ10 directly supports mitochondrial ATP production efficiency and is the most targeted supplement intervention for this variant.
+        <br><br>
+        <strong style="color:var(--ink);">Note on CADD score 36:</strong> A CADD score of 36 places this variant in the top ~0.04% of potentially deleterious variants in the genome — indicating this is a structurally meaningful change even though it's recessive. The 3.8% population frequency makes it "uncommon" but not rare.
+      </div>
+      <div class="gene-tags">
+        <span class="gene-tag">Reduced muscle energy recycling</span>
+        <span class="gene-tag">Earlier exercise fatigue</span>
+        <span class="gene-tag">Slower post-exercise recovery</span>
+        <span class="gene-tag">Myoadenylate deaminase carrier</span>
+        <span class="gene-tag">MMDD (recessive — carrier only)</span>
+        <span class="gene-tag">Cardiovascular stress sensitivity</span>
+      </div>
+      <div class="gene-action" style="color:var(--amber);">Action: Resistance training for bone health — prioritize. Plan shorter sessions with full recovery days between. Do not push through muscle fatigue signals. CoQ10 (in product 3, Qunol) directly supports mitochondrial ATP production relevant to this pathway. Magnesium is also a cofactor for muscle energy metabolism. If experiencing unexpectedly severe muscle pain after exercise, note and report to provider — creatine kinase can be checked to confirm whether AMPD1 carrier status is manifesting.</div>
     </div>
 
+    <!-- APOE -->
     <div class="gene-card priority-good">
       <div class="gene-header">
         <div>
-          <div class="gene-name">APOE rs7412 — homozygous ApoE2 (TT)</div>
-          <div class="gene-rsid">rs7412 &nbsp;·&nbsp; Chromosome 19 &nbsp;·&nbsp; Lipid metabolism / neurodegeneration</div>
+          <div class="gene-name">APOE rs7412 — homozygous ApoE2 &nbsp;<span style="font-size:12px;font-weight:300;color:var(--ink-faint);">genotype: TT (ApoE2/E2)</span></div>
+          <div class="gene-rsid">rs7412 &nbsp;·&nbsp; Chromosome 19:45412079 &nbsp;·&nbsp; Gene: APOE &nbsp;·&nbsp; Variant: c.526C&gt;T (p.Arg176Cys) &nbsp;·&nbsp; CADD score: 25.1 &nbsp;·&nbsp; Freq: 7.5% &nbsp;·&nbsp; OMIM: 107741.0001</div>
         </div>
         <span class="badge badge-green">Protective</span>
       </div>
-      <div class="gene-body">ApoE2 is the rarest and most protective APOE variant. Homozygous ApoE2 is associated with significantly reduced risk of Alzheimer's disease compared to the common ApoE3 or high-risk ApoE4 variants — this is genuinely good news. One monitoring consideration: homozygous ApoE2 can occasionally be associated with familial type 3 hyperlipoproteinemia (elevated triglycerides and cholesterol). A fasting lipid panel will confirm whether this is a factor — it's not on the current CBC panel.</div>
-      <div class="gene-tags">
-        <span class="gene-tag" style="background:var(--green-light);color:var(--green);">Reduced Alzheimer's risk</span>
-        <span class="gene-tag">Monitor lipid panel</span>
-        <span class="gene-tag">Type 3 hyperlipoproteinemia watch</span>
+      <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:0.75rem;">
+        <span class="badge badge-green" style="font-size:11px;">ClinVar: Drug response (generally protective)</span>
+        <span class="badge badge-gray" style="font-size:11px;">Expert panel reviewed · 4 submitters</span>
+        <span class="badge badge-gray" style="font-size:11px;">304 PubMed publications</span>
+        <span class="badge badge-teal" style="font-size:11px;">Homozygous — two copies of protective variant</span>
       </div>
-      <div class="gene-action" style="color:var(--green);">Action: Annual fasting lipid panel. No urgent concern — this is the standout positive genetic finding.</div>
+
+      <div class="gene-body">
+        <strong style="color:var(--ink);">What this gene does:</strong> APOE (apolipoprotein E) encodes a protein that plays a central role in lipid metabolism — specifically in the transport and clearance of cholesterol, triglycerides, and other lipids through the bloodstream and lymphatic system. ApoE binds to lipid particles (VLDL, chylomicron remnants) and acts as a ligand for hepatic LDL receptors, facilitating their clearance from circulation. ApoE is also expressed in the brain, where it plays a critical role in neuronal repair, synaptic plasticity, and clearing amyloid-beta protein — the primary constituent of Alzheimer's disease plaques.
+        <br><br>
+        <strong style="color:var(--ink);">The three APOE variants — context for ApoE2:</strong> The APOE gene has three major variants (alleles): ApoE2 (rs7412 T allele), ApoE3 (the most common), and ApoE4 (the high-risk allele). ApoE4 is the most studied genetic risk factor for late-onset Alzheimer's disease — one copy doubles risk; two copies increases risk 8–12x. ApoE2 is at the opposite end: it is associated with significantly reduced Alzheimer's risk compared to ApoE3, and dramatically lower risk than ApoE4.
+        <br><br>
+        <strong style="color:var(--ink);">Cathy's ApoE2/E2 genotype (homozygous TT):</strong> Carrying two copies of the ApoE2 allele is rare — only about 0.5–1% of the population is ApoE2/E2. This is Cathy's most genetically favorable finding. ApoE2/E2 individuals have meaningfully reduced amyloid-beta accumulation in the brain compared to ApoE3/E3 or any ApoE4 combination. The mechanism is that ApoE2 binds amyloid-beta more effectively than ApoE4, facilitating its clearance before it can form the plaques associated with Alzheimer's pathology. While this does not make someone immune to Alzheimer's (which has many genetic and environmental contributors), it represents a significant biological advantage.
+        <br><br>
+        <strong style="color:var(--ink);">The lipid monitoring caveat:</strong> ApoE2 has lower affinity for LDL receptors compared to ApoE3 or ApoE4. In the general population this means ApoE2 individuals tend to have lower LDL cholesterol — another favorable finding. However, homozygous ApoE2/E2 can in some individuals be associated with familial type 3 hyperlipoproteinemia (also called familial dysbetalipoproteinemia or remnant particle disease). This condition occurs when ApoE2/E2 combines with other genetic or environmental factors (obesity, hypothyroidism, diabetes, certain medications) to cause marked elevation of both cholesterol and triglycerides from accumulation of VLDL remnants. It does not occur in all ApoE2/E2 individuals — only those with additional metabolic stressors — but it must be monitored with a fasting lipid panel since it is not visible on the current CBC panel.
+        <br><br>
+        <strong style="color:var(--ink);">Statin pharmacogenomics:</strong> ClinVar documents atorvastatin response (efficacy) as a drug response variant for APOE. ApoE2 individuals tend to have a better LDL-lowering response to statins than ApoE4 individuals. If a statin is ever prescribed for lipid management, this is favorable context — she is likely to respond well.
+        <br><br>
+        <strong style="color:var(--ink);">What this means practically:</strong> This is a genuinely good finding and should be shared with Cathy clearly. The cognitive lifestyle habits that support brain health — quality sleep, aerobic exercise, social connection, stress management, intellectual engagement — remain important regardless of genotype, but she has a favorable genetic backdrop for neurological aging. The priority this finding creates is simply a fasting lipid panel to confirm the lipid picture is normal, and then annual monitoring thereafter.
+      </div>
+      <div class="gene-tags">
+        <span class="gene-tag" style="background:var(--green-light);color:var(--green);">Significantly reduced Alzheimer's risk</span>
+        <span class="gene-tag" style="background:var(--green-light);color:var(--green);">Favorable amyloid clearance</span>
+        <span class="gene-tag" style="background:var(--green-light);color:var(--green);">Likely lower LDL cholesterol</span>
+        <span class="gene-tag">Type 3 hyperlipoproteinemia watch (if metabolic stressors present)</span>
+        <span class="gene-tag">Statin responder (favorable)</span>
+        <span class="gene-tag">Rare genotype (ApoE2/E2 ~0.5–1% of population)</span>
+      </div>
+      <div class="gene-action" style="color:var(--green);">Action: Order a fasting lipid panel at the next provider visit — this is the one monitoring obligation created by ApoE2/E2. If triglycerides and cholesterol are normal, annual monitoring is sufficient. Maintain cognitive health habits (sleep, exercise, social engagement). Share this result with Cathy directly — it is meaningfully reassuring news about neurological aging.</div>
+    </div>
+
+    <!-- Additional variants noted from report -->
+    <div class="card" style="margin-top:0.5rem;">
+      <div style="font-size:13px;font-weight:500;color:var(--ink);margin-bottom:0.75rem;">Additional variants noted in drug response panel</div>
+      <div style="font-size:13px;color:var(--ink-muted);line-height:1.7;">
+        The GenVue report also flagged the following pharmacogenomic variants at lower clinical priority. These are noted for completeness and provider awareness:
+        <br><br>
+        <strong style="color:var(--ink);">GSTP1 Ile105Val (rs1695) — heterozygous:</strong> Glutathione S-transferase Pi 1 is a detoxification enzyme. This variant affects response to platinum-based chemotherapy agents (cisplatin, oxaliplatin) and cyclophosphamide — primarily relevant if oncologic treatment is ever required. Also associated with hematological toxicity with fluorouracil. Not a primary lifestyle concern; inform any oncologist if chemotherapy is ever prescribed.
+        <br><br>
+        <strong style="color:var(--ink);">SOD2 Val16Ala (rs4880) — normal (AA wildtype):</strong> Superoxide dismutase 2 is the primary mitochondrial antioxidant enzyme. Cathy carries the normal (AA) genotype — no impairment of mitochondrial antioxidant defense. This is a favorable finding that means mitochondrial oxidative stress protection is intact, relevant to cardiovascular aging.
+        <br><br>
+        <strong style="color:var(--ink);">VKORC1 (rs7294) — normal:</strong> Vitamin K epoxide reductase — affects warfarin dosing. Cathy's genotype is normal (CC), meaning standard warfarin dosing would apply if anticoagulation is ever required.
+        <br><br>
+        <strong style="color:var(--ink);">GP1BA Thr161Met (rs6065) — normal:</strong> Glycoprotein Ib alpha — affects aspirin efficacy. Normal genotype (CC), meaning standard aspirin response is expected.
+        <br><br>
+        <strong style="color:var(--ink);">HTR1A (rs6295) — heterozygous:</strong> Serotonin receptor 1A — affects paroxetine (Paxil) response and efficacy. If an SSRI is ever prescribed and paroxetine is being considered, this variant may influence response. Discuss with prescribing physician.
+        <br><br>
+        <strong style="color:var(--ink);">NAT2 (rs1041983) — homozygous TT:</strong> N-acetyltransferase 2 — affects metabolism of isoniazid, pyrazinamide, and related tuberculosis drugs. Relevant only if TB treatment is ever required. Also affects certain sulfonamide antibiotics.
+        <br><br>
+        <strong style="color:var(--ink);">TP53 Pro72Arg (rs1042522) — normal:</strong> Tumor protein p53 — the "guardian of the genome." Normal reference genotype. This variant is associated with Li-Fraumeni syndrome only when pathogenic — Cathy's genotype is the standard polymorphism, not a disease-causing mutation. Normal cancer risk from this locus.
+      </div>
     </div>
   </section>
 
