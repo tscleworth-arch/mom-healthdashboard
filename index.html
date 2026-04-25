@@ -707,8 +707,8 @@
       </div>
       <div class="stat">
         <div class="stat-label">Genetic variants</div>
-        <div class="stat-value val-amber" style="font-size:1.45rem;">6 + 7</div>
-        <div class="stat-sub">Primary · Pharmacogenomic</div>
+        <div class="stat-value val-amber" style="font-size:1.45rem;">8 + 11</div>
+        <div class="stat-sub">Primary · Confirmed clear</div>
       </div>
       <div class="stat">
         <div class="stat-label">Active meds</div>
@@ -722,7 +722,7 @@
       <div class="exec-body">
         Cathy is a 67-year-old woman with a <strong>remarkably well-managed cardiovascular story</strong>, a <strong>newly identified bone health priority</strong>, and a <strong>recent breakthrough in mental health</strong> — and she is doing well.
         <br><br>
-        The cardiovascular picture illustrates what careful medicine looks like. Her CT coronary calcium score of 186 in December 2021 revealed moderate coronary atherosclerosis (combined with a strong family history — brother had MI, sister had MI). She started atorvastatin in January 2022 and has been a textbook statin responder: LDL dropped from 164 in mid-2020 to <strong>44 in March 2026</strong>, well below the secondary-prevention target of 70. She tolerates the medication (she moved from 20mg down to 10mg to reduce mild muscle aches while maintaining the effect), takes daily aspirin 81mg, and her 2024 nuclear stress test was negative. This is working.
+        The cardiovascular picture illustrates what careful medicine looks like. Her CT coronary calcium score of 186 in December 2021 revealed moderate coronary atherosclerosis (combined with a strong family history — brother had MI, sister had MI, and her newly-confirmed homozygous 9p21 risk genotype reinforces the genetic basis). She started atorvastatin in January 2022 and has been a textbook statin responder: LDL dropped from 164 in mid-2020 to <strong>44 in March 2026</strong>, well below the secondary-prevention target of 70. She tolerates the medication well at 10mg — and the 2022 dose reduction from 20mg, prompted by mild muscle aches, is now fully explained: she carries one copy of the SLCO1B1 *5 variant, which slows liver clearance of statins and amplifies muscle exposure. The 10mg dose lands in her therapeutic window perfectly. She also takes daily aspirin 81mg, and her 2024 nuclear stress test was negative. This is working.
         <br><br>
         The bone health finding is new and clinically meaningful. The September 2025 DEXA showed <strong>WHO-confirmed osteoporosis at the left femoral neck (T-score −2.7)</strong> with low bone mass at multiple other sites. Dr. Gulati recommended pharmacologic intervention. As of March 2026, Cathy has declined Reclast/Prolia injections but is supporting bone health through Vitamin D (now optimal at 54.4 ng/mL), K2, and calcium-rich foods. This decision is hers, but the risks deserve an informed ongoing discussion — femoral neck fracture in someone with her T-score carries significant morbidity.
         <br><br>
@@ -1271,261 +1271,345 @@
   <section class="section" id="genetics">
     <div class="section-title">
       <span class="section-num">07</span>
-      Genetic mutation analysis
+      What your genes are telling us
     </div>
-    <div class="section-sub">Source: GenVue Discovery · Analyzed via ClinVar · 6 primary variants + 7 pharmacogenomic</div>
+    <div class="section-sub">Plain-language guide · GenVue findings + verified against raw Ancestry DNA (664,421 SNPs)</div>
 
-    <div style="font-size:12.5px;color:var(--ink-muted);margin-bottom:1.25rem;padding:10px 14px;background:var(--cream);border-radius:var(--radius-sm);line-height:1.65;">
-      <strong style="color:var(--ink);">Priority legend:</strong> <span class="badge badge-red" style="font-size:10.5px;">High</span> actionable immediately · <span class="badge badge-amber" style="font-size:10.5px;">Moderate</span> monitor + mitigate · <span class="badge badge-green" style="font-size:10.5px;">Protective</span> favorable variant. Heterozygous = one copy; Homozygous = two copies. ClinVar significance noted where available. All variants are educational — not diagnostic.
+    <div class="card" style="margin-bottom:1.5rem; background:var(--cream);">
+      <div class="card-title">How to read this section</div>
+      <div style="font-size:13.5px;color:var(--ink-muted);line-height:1.75;">
+        Genes come in pairs — one from each parent. When we say <strong style="color:var(--ink);">"one copy"</strong> (heterozygous), it means one parent passed down a variant. <strong style="color:var(--ink);">"Two copies"</strong> (homozygous) means both did.
+        <br><br>
+        Each gene below has a real impact on how your body works day-to-day, but none of these are diseases — they're tendencies. Think of them like inheriting your dad's height or your mom's eye color, except these affect things like how you handle stress, how your body uses vitamins, or how you respond to certain medications. Knowing them lets us play to your strengths and protect your weak spots.
+        <br><br>
+        <span class="badge badge-red" style="font-size:10.5px;">Pay attention</span> — actively shaping your care. <span class="badge badge-amber" style="font-size:10.5px;">Worth knowing</span> — adjust some habits. <span class="badge badge-green" style="font-size:10.5px;">Good news</span> — you got lucky here.
+      </div>
     </div>
 
-    <!-- MTHFR -->
+    <!-- ═══════════ MTHFR ═══════════ -->
     <div class="gene-card priority-high">
       <div class="gene-header">
         <div>
-          <div class="gene-name">MTHFR C677T — heterozygous &nbsp;<span style="font-size:12px;font-weight:300;color:var(--ink-faint);">genotype: TC</span></div>
-          <div class="gene-rsid">rs1801133 &nbsp;·&nbsp; Chr 1:11856378 &nbsp;·&nbsp; c.665C&gt;T (p.Ala222Val) &nbsp;·&nbsp; CADD 25.5 &nbsp;·&nbsp; Freq 24.5%</div>
+          <div class="gene-name">MTHFR — the folate processor</div>
+          <div class="gene-rsid">One copy of the variant · rs1801133 (C677T) · ~1 in 4 people have this</div>
         </div>
-        <span class="badge badge-red">High priority</span>
-      </div>
-      <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:0.75rem;">
-        <span class="badge badge-amber" style="font-size:11px;">ClinVar: Conflicting interpretations / risk factor</span>
-        <span class="badge badge-gray" style="font-size:11px;">Expert panel reviewed · 10 submitters</span>
-        <span class="badge badge-gray" style="font-size:11px;">OMIM: 607093.0003</span>
+        <span class="badge badge-red">Pay attention</span>
       </div>
       <div class="gene-body">
-        <strong>What this gene does:</strong> MTHFR (methylenetetrahydrofolate reductase) is the enzyme responsible for the critical conversion of dietary folate into its biologically active form: 5-methyltetrahydrofolate (5-MTHF). This active folate is the key methyl donor that powers the methylation cycle — the body's fundamental biochemical on/off switch governing DNA synthesis and repair, neurotransmitter production, detoxification, immune regulation, and homocysteine clearance.
+        <strong>The simple version:</strong> Your body needs folate (vitamin B9) for thousands of jobs — repairing DNA, making brain chemicals, clearing out toxins, building healthy blood cells. But folate from food and most vitamins comes in a "raw" form your body has to convert before it can use it. Your MTHFR gene makes the converter.
         <br><br>
-        <strong>What this variant does:</strong> The C677T polymorphism (also known as the "thermolabile" variant, or A222V at the protein level) encodes a form of the MTHFR enzyme that is structurally less stable at body temperature, causing it to unfold and lose activity. As a heterozygous carrier (one copy), Cathy's enzyme efficiency is reduced by approximately 35% compared to wildtype. This is clinically meaningful but less severe than the TT homozygous state (60–70% reduction).
+        <strong>What's different about yours:</strong> Your converter runs at about 65% efficiency instead of 100%. It's not broken — it just works slower than average. About a quarter of people have this exact variant.
         <br><br>
-        <strong>The folic acid problem:</strong> Standard synthetic folic acid — in fortified breads, cereals, orange juice, prenatal vitamins, and most cheap multivitamins — must pass through MTHFR to be converted into 5-MTHF. With reduced MTHFR activity, unmetabolized folic acid (UMFA) accumulates and can competitively block folate receptors, paradoxically worsening the deficiency it was meant to treat. This is why the supplement protocol specifies methylfolate (5-MTHF) — the pre-converted active form that bypasses MTHFR entirely.
+        <strong>Why this matters for your bones:</strong> When folate doesn't get processed properly, a substance called <em>homocysteine</em> builds up in your blood. Elevated homocysteine actually weakens the collagen scaffolding inside your bones — picture rebar inside concrete. Your bone density (the concrete) might look one way on the DEXA, but if the rebar is weakened, the bone is more brittle than the numbers suggest. <strong style="color:var(--ink);">Given your osteoporosis diagnosis, this is a direct fixable factor.</strong>
         <br><br>
-        <strong>Why this matters for bone health:</strong> When folate metabolism is impaired, homocysteine cannot be remethylated back to methionine and accumulates. Elevated homocysteine is an <strong>independent risk factor for osteoporotic fractures</strong> — it directly impairs bone collagen cross-linking, reducing bone matrix quality independent of density measurements. Given Cathy's DEXA finding, testing and treating homocysteine is a direct intervention on fracture risk.
+        <strong>Why this matters for your heart:</strong> The same homocysteine buildup also damages blood vessel walls and contributes to plaque buildup. You already have moderate coronary calcification, so cleaning this up is real prevention work, not just optimization.
         <br><br>
-        <strong>Why this matters cardiovascularly:</strong> Elevated homocysteine is an independent risk factor for cardiovascular disease (endothelial damage, atherosclerosis) and venous thrombosis. Cathy already has established coronary atherosclerosis — homocysteine optimization is residual risk reduction.
+        <strong>The folic acid trap:</strong> Most cheap multivitamins, fortified breads, cereals, and orange juice contain "folic acid" — that's the synthetic raw form. With your variant, that synthetic version actually <em>blocks</em> the receptors your body needs to absorb the good stuff. It can make things worse instead of better. <strong style="color:var(--ink);">You want "methylfolate" or "5-MTHF" on the label — that's the pre-converted form your body can use immediately.</strong>
         <br><br>
-        <strong>Drug interactions to flag:</strong> Methotrexate works by inhibiting folate metabolism — if ever prescribed (for rheumatoid arthritis, psoriasis, or cancer), providers must know her MTHFR status. Also relevant: MTHFR variant affects SSRI response since serotonin synthesis depends on methylation.
-        <br><br>
-        <strong>Cathy's MCV of 91 is reassuring:</strong> MTHFR-driven folate/B12 deficiency classically causes macrocytic anemia with elevated MCV. However, functional methylation deficits can exist for years before CBC changes — only homocysteine testing confirms actual impact.
+        <strong>One thing to flag with doctors:</strong> If you're ever prescribed methotrexate (used for arthritis or some cancers), they need to know about this variant — it changes how the drug behaves. Same goes for some antidepressants.
       </div>
       <div class="gene-tags">
-        <span class="gene-tag">Elevated homocysteine risk</span>
-        <span class="gene-tag">Cardiovascular risk factor</span>
-        <span class="gene-tag">Bone collagen impairment</span>
-        <span class="gene-tag">Fracture risk amplifier</span>
-        <span class="gene-tag">Impaired detoxification</span>
-        <span class="gene-tag">Folic acid intolerance</span>
-        <span class="gene-tag">Venous thrombosis susceptibility</span>
-        <span class="gene-tag">Methotrexate / SSRI interaction</span>
+        <span class="gene-tag">Affects bone strength</span>
+        <span class="gene-tag">Affects heart health</span>
+        <span class="gene-tag">Avoid synthetic folic acid</span>
+        <span class="gene-tag">Use methylfolate instead</span>
       </div>
-      <div class="gene-action" style="color:var(--teal);">Action: Start Thorne Methyl-Guard Plus. Eliminate all synthetic folic acid. Order serum homocysteine test — target &lt;10 µmol/L (optimal &lt;7). Retest 3–6 months after starting protocol.</div>
+      <div class="gene-action" style="color:var(--teal);"><strong>What to do:</strong> Take Thorne Methyl-Guard Plus daily (it has the right form of folate plus B12 and B6 to support the whole pathway). Read labels — avoid anything that says "folic acid." Ask Dr. Gulati to add a homocysteine blood test next time — we want it under 10. Check your current vitamins and toss any with synthetic folic acid.</div>
     </div>
 
-    <!-- COMT -->
+    <!-- ═══════════ COMT ═══════════ -->
     <div class="gene-card priority-high">
       <div class="gene-header">
         <div>
-          <div class="gene-name">COMT Val158Met — homozygous &nbsp;<span style="font-size:12px;font-weight:300;color:var(--ink-faint);">genotype: AA (slow-slow)</span></div>
-          <div class="gene-rsid">rs4680 &nbsp;·&nbsp; Chr 22:19951271 &nbsp;·&nbsp; c.472G&gt;A (p.Val158Met) &nbsp;·&nbsp; CADD 13.15 &nbsp;·&nbsp; Freq 36.9%</div>
+          <div class="gene-name">COMT — your stress chemical cleanup crew</div>
+          <div class="gene-rsid">Both copies are the slow version · rs4680 (Val158Met) · this is the slowest possible setting</div>
         </div>
-        <span class="badge badge-red">High priority</span>
-      </div>
-      <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:0.75rem;">
-        <span class="badge badge-amber" style="font-size:11px;">ClinVar: Drug response / functional polymorphism</span>
-        <span class="badge badge-gray" style="font-size:11px;">Expert panel reviewed · 3 submitters</span>
-        <span class="badge badge-gray" style="font-size:11px;">OMIM: 116790.0001</span>
-        <span class="badge badge-gray" style="font-size:11px;">598 PubMed publications</span>
+        <span class="badge badge-red">Pay attention</span>
       </div>
       <div class="gene-body">
-        <strong>What this gene does:</strong> COMT (catechol-O-methyltransferase) is a key enzyme in the catecholamine degradation pathway. It breaks down dopamine, epinephrine (adrenaline), norepinephrine, and — critically — catechol estrogens (metabolized forms of estradiol). COMT uses SAM (S-adenosylmethionine) as a methyl donor, which means it is directly dependent on the methylation cycle also affected by the MTHFR variant. These two variants compound each other.
+        <strong>The simple version:</strong> When something stressful happens, your brain releases adrenaline, dopamine, and other "alert" chemicals. After the stressful moment passes, you need to clean those chemicals back up to feel calm again. The COMT gene makes the cleanup crew. Your COMT also clears used-up estrogen out of your system.
         <br><br>
-        <strong>What this variant does:</strong> The Val158Met substitution reduces COMT enzyme thermostability. Homozygous AA (two copies) produces the slowest COMT activity — approximately 3–4× lower than the high-activity GG genotype. Cathy carries the slowest possible COMT configuration. This is a codominant variant, meaning two slow copies produce a meaningfully different phenotype than one.
+        <strong>What's different about yours:</strong> You inherited the slow cleanup version from <em>both</em> of your parents — so your cleanup crew works at about a quarter of normal speed. This is the slowest possible setting. About one in three people have at least one copy; getting both copies (like you) is less common.
         <br><br>
-        <strong>The "worrier" phenotype — and what we see clinically:</strong> Because dopamine is cleared more slowly in the prefrontal cortex, slow-COMT individuals show stronger working memory and sustained attention under calm conditions — but under high stress, the cortex becomes flooded with catecholamines that cannot clear fast enough, impairing executive function and amplifying the stress response. This is exactly the pattern Cathy's 8-year record describes: long-standing panic disorder since 2016, GAD, heightened emotional memory, amplified response to major life stressors (family deaths in 2024, marital stress 2025). <strong>Her anxiety is not "just stress" — it is at least partly a genetic predisposition.</strong>
+        <strong>Why this explains a lot:</strong> Researchers actually call this the <em>"worrier"</em> genotype — and it's not an insult. Slow cleanup means stress chemicals linger longer. When things are calm, this is actually an advantage — slow-COMT people tend to have stronger focus, better memory, and they don't forget the important details. But when life gets stressful, the cleanup crew falls behind, and that's when anxiety, racing thoughts, and panic attacks can build up faster than you can recover from them. <strong style="color:var(--ink);">Your panic disorder since 2016 and your anxiety flares aren't a personal weakness — they're partly a wiring difference.</strong>
         <br><br>
-        <strong>Estrogen and bone health connection:</strong> COMT clears catechol estrogens — particularly 4-hydroxyestradiol. When COMT is slow, these metabolites linger. More importantly in context: estrogen is the primary regulator of osteoclast activity in women. Post-menopausal estrogen decline removes this brake. Slow estrogen clearance through perimenopause may have altered Cathy's hormonal trajectory in ways that compounded bone density loss. This is a plausible contributing mechanism to her femoral neck T-score of −2.7.
+        <strong>Why this might have affected your bones:</strong> Slow estrogen cleanup through your perimenopausal years may have created an unusual hormone pattern as you went through menopause. Estrogen is what protects bone density in women — and the way your body handled estrogen on the way out may have contributed to where you are now.
         <br><br>
-        <strong>Caffeine sensitivity:</strong> Caffeine indirectly elevates dopamine and norepinephrine — already slow to clear. This produces prolonged stimulant effects and anxiety amplification most people don't experience. Similarly: alcohol, high-catechol foods, and certain stimulants.
+        <strong>Why caffeine hits you harder:</strong> Caffeine boosts the same alert chemicals your slow COMT can't clean up fast enough. So one cup of coffee in you can feel like two cups in someone else, and the jittery effect lasts longer. Same with alcohol and dark chocolate to a lesser degree.
         <br><br>
-        <strong>The MTHFR–COMT compounding effect:</strong> COMT requires SAM as its methyl donor — SAM production is impaired by poor methylation from MTHFR dysfunction. Her two high-priority variants amplify each other. Supporting methylation with 5-MTHF + methyl-B12 simultaneously helps COMT function. Magnesium is a direct COMT cofactor.
+        <strong>The MTHFR-COMT compound effect:</strong> Your COMT cleanup crew runs on a chemical called SAM, which is made by your methylation system (MTHFR). So your slow MTHFR is making your already-slow COMT even slower. The good news: fixing one helps the other. The Methyl-Guard Plus (for MTHFR) actually pulls double duty here.
       </div>
       <div class="gene-tags">
-        <span class="gene-tag">Slow dopamine clearance</span>
+        <span class="gene-tag">Anxiety predisposition</span>
+        <span class="gene-tag">Caffeine sensitivity</span>
         <span class="gene-tag">Slow estrogen clearance</span>
-        <span class="gene-tag">Stress + anxiety amplification</span>
-        <span class="gene-tag">Caffeine hypersensitivity</span>
-        <span class="gene-tag">Bone loss amplifier</span>
-        <span class="gene-tag">Compounded by MTHFR</span>
-        <span class="gene-tag">"Worrier" phenotype</span>
+        <span class="gene-tag">"Worrier" genotype</span>
+        <span class="gene-tag">Magnesium is your friend</span>
       </div>
-      <div class="gene-action" style="color:var(--teal);">Action: Evening magnesium glycinate (direct cofactor). Strict moderation of caffeine (not just "a little less"). Protect therapy engagement and buspirone regimen — this is genetically relevant medical treatment. Methylation protocol (Methyl-Guard) simultaneously helps COMT.</div>
+      <div class="gene-action" style="color:var(--teal);"><strong>What to do:</strong> Take magnesium glycinate every evening — it's literally what your COMT cleanup crew uses as fuel, and it helps you wind down. Cap caffeine at one cup before noon (decaf after that). Keep going to therapy and stay on buspirone — your remission isn't an accident, it's the right treatment for your wiring. The methylation supplement also helps here.</div>
     </div>
 
-    <!-- CFH -->
+    <!-- ═══════════ CFH ═══════════ -->
     <div class="gene-card priority-mod">
       <div class="gene-header">
         <div>
-          <div class="gene-name">CFH His402Tyr — heterozygous &nbsp;<span style="font-size:12px;font-weight:300;color:var(--ink-faint);">genotype: TC</span></div>
-          <div class="gene-rsid">rs1061170 &nbsp;·&nbsp; Chr 1:196659237 &nbsp;·&nbsp; p.His402=/Tyr &nbsp;·&nbsp; Freq 26.7% &nbsp;·&nbsp; OMIM: 134370.0008</div>
+          <div class="gene-name">CFH — eye protection regulator</div>
+          <div class="gene-rsid">One copy of the variant · rs1061170 · ~1 in 4 people have this · ClinVar: pathogenic risk factor</div>
         </div>
-        <span class="badge badge-amber">Moderate-High</span>
-      </div>
-      <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:0.75rem;">
-        <span class="badge badge-red" style="font-size:11px;">ClinVar: Pathogenic / risk factor</span>
-        <span class="badge badge-gray" style="font-size:11px;">Expert reviewed · 1 submitter</span>
-        <span class="badge badge-gray" style="font-size:11px;">301 PubMed publications</span>
-        <span class="badge badge-amber" style="font-size:11px;">Autosomal dominant — carrier status meaningful</span>
+        <span class="badge badge-amber">Worth knowing</span>
       </div>
       <div class="gene-body">
-        <strong>What this gene does:</strong> Complement Factor H (CFH) is a critical regulator of the alternative complement pathway. In the retina, tight regulation of complement activity is essential — the retina has minimal blood supply and cannot afford inflammatory damage. CFH acts as the primary brake on complement activation in retinal tissue.
+        <strong>The simple version:</strong> Your eye's retina needs careful protection from your immune system — too much immune activity in there causes inflammation that damages your central vision over time. The CFH gene makes a protein that acts like a referee, telling your immune system "stand down" inside the retina.
         <br><br>
-        <strong>What this variant does:</strong> The His402Tyr variant alters a key binding domain in the CFH protein, reducing its ability to bind CRP and heparin in the extracellular matrix of the retina. This weakens CFH's regulatory function and allows the complement cascade to proceed unchecked in Bruch's membrane beneath the retinal pigment epithelium. The result: chronic, low-grade complement-mediated inflammation in the macula that accumulates over decades.
+        <strong>What's different about yours:</strong> Your referee isn't quite as effective as it should be. The immune system runs slightly hot in your retina, causing slow, low-grade inflammation under the macula (the center of your vision used for reading, driving, and seeing faces).
         <br><br>
-        <strong>Age-related macular degeneration (AMD) — the central concern:</strong> AMD is a leading cause of irreversible vision loss in adults over 60, affecting central (macular) vision needed for reading, driving, recognizing faces. It does not affect peripheral or night vision in its early stages — which is why it can progress silently for years. Two forms:
-        <br>&nbsp;&nbsp;• <strong>Dry AMD (85–90%):</strong> Yellow drusen deposits, slow progressive photoreceptor loss over years.
-        <br>&nbsp;&nbsp;• <strong>Wet AMD (10–15%):</strong> Abnormal blood vessels leak beneath the macula. Vision loss can occur within weeks. Most severe AMD blindness.
+        <strong>What this puts you at risk for:</strong> Age-related macular degeneration, called AMD. It's one of the leading causes of vision loss in people over 60. Here's the scary part — <strong style="color:var(--ink);">it's silent until significant damage is done.</strong> You don't get blurry vision early on. Your peripheral vision stays fine. By the time you notice central vision changes, the damage is often hard to reverse.
         <br><br>
-        <strong>Why annual dilated eye exams are non-negotiable:</strong> AMD produces no early symptoms. A dilated retinal exam by an ophthalmologist (not merely an optometrist refraction) allows visualization of drusen, RPE changes, early neovascularization. When caught early, anti-VEGF injections can halt wet AMD progression. Once central vision is lost, it cannot be restored.
+        <strong>Why early detection completely changes the outcome:</strong> AMD comes in two flavors. The "dry" form moves slowly over years — manageable. The "wet" form, where abnormal blood vessels grow under the retina, can take vision in <em>weeks</em>. But — and this is the key — if you catch wet AMD early, there are eye injections that can completely halt the progression. The catch is, you only catch it early if someone's actively looking, which means a real dilated eye exam by an ophthalmologist (the medical doctor for eyes), not just a glasses-prescription visit at the optometrist.
         <br><br>
-        <strong>Gap in current record:</strong> Cathy's file shows regular optometry visits for prescription and she has had cataract surgery (2020), but <strong>no dedicated annual dilated retinal exam with ophthalmology is documented</strong>. This should change.
-        <br><br>
-        <strong>The AREDS2 evidence:</strong> The AREDS2 NIH trial showed the specific formulation (lutein 10mg + zeaxanthin 2mg + vit C 500mg + vit E 400 IU + zinc 25mg + copper 2mg) reduces progression to advanced AMD by ~25% in at-risk patients. Level I evidence for this exact genetic risk profile.
+        <strong>The good news:</strong> There's a specific vitamin formula called AREDS2 — based on a major clinical trial — that's been proven to slow AMD progression by about 25% in people with exactly your genetic profile. It's the rare case where a specific supplement has gold-standard scientific evidence behind it.
       </div>
       <div class="gene-tags">
-        <span class="gene-tag">AMD (dry + wet) risk</span>
-        <span class="gene-tag">Basal laminar drusen</span>
-        <span class="gene-tag">Complement dysregulation</span>
-        <span class="gene-tag">AREDS2 indicated</span>
+        <span class="gene-tag">Macular degeneration risk</span>
+        <span class="gene-tag">Annual dilated eye exam needed</span>
+        <span class="gene-tag">AREDS2 vitamins help</span>
       </div>
-      <div class="gene-action" style="color:var(--amber);">Action: Schedule annual dilated eye exam with an ophthalmologist (not optometrist). Start Vision Defender Exact AREDS2. Omega-3 EPA/DHA supports retinal health through anti-inflammatory mechanisms.</div>
+      <div class="gene-action" style="color:var(--amber);"><strong>What to do:</strong> Schedule a dilated eye exam with an ophthalmologist (an MD, not an optometrist) — and put it on the annual calendar going forward. Start the Vision Defender AREDS2 supplement (the formulation matters — it has to be exactly the AREDS2 mix). The omega-3 in the CoQ10/Omega combo also helps protect your retina.</div>
     </div>
 
-    <!-- ADD1 -->
+    <!-- ═══════════ ADD1 ═══════════ -->
     <div class="gene-card priority-mod">
       <div class="gene-header">
         <div>
-          <div class="gene-name">ADD1 Gly460Trp — heterozygous &nbsp;<span style="font-size:12px;font-weight:300;color:var(--ink-faint);">genotype: TG</span></div>
-          <div class="gene-rsid">rs4961 &nbsp;·&nbsp; Chr 4:2906707 &nbsp;·&nbsp; c.1378G&gt;T (p.Gly460Trp) &nbsp;·&nbsp; CADD 31 &nbsp;·&nbsp; Freq 20.8%</div>
+          <div class="gene-name">ADD1 — your salt sensitivity dial</div>
+          <div class="gene-rsid">One copy of the variant · rs4961 · ~1 in 5 people have this</div>
         </div>
-        <span class="badge badge-amber">Watch</span>
-      </div>
-      <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:0.75rem;">
-        <span class="badge badge-amber" style="font-size:11px;">ClinVar: Drug response</span>
-        <span class="badge badge-gray" style="font-size:11px;">OMIM: 102680.0001</span>
-        <span class="badge badge-gray" style="font-size:11px;">45 PubMed publications</span>
+        <span class="badge badge-amber">Worth knowing</span>
       </div>
       <div class="gene-body">
-        <strong>What this gene does:</strong> ADD1 (alpha-adducin) encodes a cytoskeletal protein expressed in kidney tubular cells. It regulates the Na+/K+-ATPase pump — the primary transport protein responsible for sodium reabsorption from urine. More reabsorption = higher blood sodium = more fluid retention = higher BP.
+        <strong>The simple version:</strong> When you eat salty food, your kidneys decide how much salt to keep and how much to flush out in urine. The ADD1 gene helps regulate that decision. People with your variant hold onto more salt than average — which means salt raises your blood pressure more than it would for most people.
         <br><br>
-        <strong>What this variant does:</strong> The Gly460Trp substitution increases the activity of Na+/K+-ATPase in the kidney. Cathy's kidneys retain more sodium per unit of dietary intake than average. The consequence: salt-sensitive blood pressure. The same sodium load that causes a mild BP rise in most people may cause a larger, longer-lasting elevation in her.
+        <strong>What this means in practice:</strong> The same Chinese takeout, frozen meal, or salty snack that gives a friend a small temporary blood pressure bump might give you a bigger and longer-lasting one. It's not that you have high blood pressure — your readings are actually beautiful, around 117/74. It's that <strong style="color:var(--ink);">salt is a more powerful lever for you than for most people, in both directions.</strong> If you ever needed to bring your BP down, cutting sodium would work especially well for you. And if you ever started loading up on salt, your BP would climb faster than someone else's.
         <br><br>
-        <strong>Current clinical context:</strong> Cathy's BP is consistently well-controlled (117/74 average) without antihypertensive medication. This variant has not yet manifested as hypertension — and dietary sodium management is how we keep it that way. She had one elevated reading in September 2025 (167/90) during an anxiety flare, with watch-reported HR spikes. Anxiety + ADD1 + high-sodium meal = a triple-stack she should know about.
+        <strong>The anxiety connection:</strong> Remember that high reading you had during the September 2025 anxiety flare (167/90)? Anxiety raises BP. Salt raises BP. Your variant amplifies salt's effect. So a stressful day plus a salty dinner is a stack of three things working together. Worth knowing.
         <br><br>
-        <strong>Pharmacogenomic note:</strong> This variant specifically affects response to furosemide and spironolactone. Carriers show enhanced BP response to these diuretics. If antihypertensive is ever needed, thiazide/loop diuretics are genetically indicated as first choice.
+        <strong>The flip side — potassium is your superpower:</strong> Potassium does the opposite of sodium at the kidney level. A diet rich in potassium (avocado, sweet potato, banana, leafy greens, salmon) actively cancels out the salt-retention mechanism your variant creates. So instead of just "eat less salt," the better framing is <strong style="color:var(--ink);">"keep salt moderate AND make sure you're getting plenty of potassium-rich foods every day."</strong>
         <br><br>
-        <strong>Dietary counters:</strong> Potassium antagonizes sodium at the kidney level. A potassium-rich diet (sweet potato, avocado, banana, leafy greens, salmon) functionally blunts the ADD1 mechanism. Magnesium supports vascular tone.
+        <strong>If you ever need a BP medication:</strong> The class called diuretics (specifically thiazides and loop diuretics like furosemide) work especially well for people with your variant. Worth telling any doctor who's prescribing.
       </div>
       <div class="gene-tags">
-        <span class="gene-tag">Salt-sensitive hypertension</span>
-        <span class="gene-tag">Enhanced sodium retention</span>
-        <span class="gene-tag">Elevated diuretic response</span>
+        <span class="gene-tag">Salt-sensitive blood pressure</span>
+        <span class="gene-tag">Potassium-rich diet helps</span>
+        <span class="gene-tag">Diuretics work especially well</span>
       </div>
-      <div class="gene-action" style="color:var(--amber);">Action: Dietary sodium target &lt;1,500mg/day. Prioritize potassium-rich foods. Home BP monitoring during higher-sodium periods. If antihypertensive ever prescribed, inform provider of ADD1 variant — diuretics genetically indicated.</div>
+      <div class="gene-action" style="color:var(--amber);"><strong>What to do:</strong> Aim for under 1,500 mg of sodium per day (the average American eats 3,400 mg). Build potassium into every day — avocado, sweet potato, banana, salmon, leafy greens. Track BP at home occasionally, especially after salty restaurant meals or stressful weeks. Magnesium glycinate also helps.</div>
     </div>
 
-    <!-- AMPD1 -->
+    <!-- ═══════════ AMPD1 ═══════════ -->
     <div class="gene-card priority-mod">
       <div class="gene-header">
         <div>
-          <div class="gene-name">AMPD1 — heterozygous carrier &nbsp;<span style="font-size:12px;font-weight:300;color:var(--ink-faint);">genotype: AG</span></div>
-          <div class="gene-rsid">rs17602729 &nbsp;·&nbsp; Chr 1:115236057 &nbsp;·&nbsp; CADD 36 &nbsp;·&nbsp; Freq 3.8% (uncommon)</div>
+          <div class="gene-name">AMPD1 — muscle energy recycling</div>
+          <div class="gene-rsid">One copy of the variant · rs17602729 · uncommon (~4% of people)</div>
         </div>
-        <span class="badge badge-amber">Low-Moderate</span>
-      </div>
-      <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:0.75rem;">
-        <span class="badge badge-amber" style="font-size:11px;">ClinVar: Conflicting interpretations</span>
-        <span class="badge badge-gray" style="font-size:11px;">OMIM: 102770.0001</span>
-        <span class="badge badge-green" style="font-size:11px;">Autosomal recessive — carrier only</span>
+        <span class="badge badge-amber">Worth knowing</span>
       </div>
       <div class="gene-body">
-        <strong>What this gene does:</strong> AMPD1 (adenosine monophosphate deaminase 1) encodes myoadenylate deaminase, expressed specifically in skeletal muscle. It plays a central role in the purine nucleotide cycle — the energy management system within muscle cells during intense exercise.
+        <strong>The simple version:</strong> When your muscles work hard, they burn through energy and need to recycle the spent fuel back into usable energy. The AMPD1 gene helps run that recycling process inside muscle cells. People with two copies of your variant can have noticeable exercise problems; people with one copy (you) usually have a milder version.
         <br><br>
-        <strong>What this variant does:</strong> Loss-of-function change. In homozygous state, produces myoadenylate deaminase deficiency (MMDD), the most prevalent genetic enzyme deficiency in humans (~1–2% of population). Symptoms: exercise-induced pain, weakness, premature fatigue.
+        <strong>What this means for you:</strong> You may notice you tire a bit faster during exercise than you'd expect, and recovery between workouts may take longer. Soreness might be more pronounced. <strong style="color:var(--ink);">It's not a sign you should avoid exercise — it's a sign that "lots of moderate exercise with good recovery" works better for you than "occasional intense sessions."</strong>
         <br><br>
-        <strong>Cathy's carrier status:</strong> As heterozygous carrier (one copy), full MMDD should not manifest. However, research suggests milder version — faster fatigue onset, slower recovery between sessions.
+        <strong>Why this matters specifically right now:</strong> Resistance training is the single most powerful non-medication thing you can do for your osteoporosis. Bones get stronger when they're loaded — pulling and pushing against weight or gravity tells the body "we need to keep this bone strong." The trick for you is doing it in a way that respects your recycling speed: shorter sessions, lighter weights, more frequency, full rest days between. You already do pilates, which is excellent. Adding some specific weight-bearing work — even with bands or your own body weight — for hips and spine 2 or 3 times a week would give your femoral neck (the bone area that's currently most affected) the signal it needs to rebuild.
         <br><br>
-        <strong>Practical exercise implications — especially relevant given osteoporosis:</strong> Resistance training is the most evidence-backed lifestyle intervention for bone density. Cathy doesn't need to avoid exercise — she needs to plan for:
-        <br>&nbsp;&nbsp;• Earlier fatigue onset than peers
-        <br>&nbsp;&nbsp;• Longer recovery windows (DOMS)
-        <br>&nbsp;&nbsp;• Better results from lower-intensity, higher-frequency training
-        <br><br>
-        She already does pilates, yoga, golf, and walking daily — an excellent exercise portfolio for her genetics. Adding specific weight-bearing resistance (bands, light weights, body weight) 2–3×/week targets the femoral neck directly.
+        <strong>The CoQ10 connection:</strong> The CoQ10 supplement does double duty here — it's the spark plug of your cells' energy factories. It helps your muscles work more efficiently within the constraints your variant creates. Your statin also depletes CoQ10, so this is a layered benefit.
       </div>
       <div class="gene-tags">
-        <span class="gene-tag">Reduced muscle energy recycling</span>
         <span class="gene-tag">Earlier exercise fatigue</span>
         <span class="gene-tag">Slower recovery</span>
+        <span class="gene-tag">CoQ10 helps</span>
       </div>
-      <div class="gene-action" style="color:var(--amber);">Action: Continue pilates (excellent for core + bone). Add resistance training 2–3×/week targeting hip/spine. Full recovery days between. CoQ10 + magnesium support energy metabolism.</div>
+      <div class="gene-action" style="color:var(--amber);"><strong>What to do:</strong> Add 2-3 short resistance training sessions per week to your existing pilates and walking — focus on hips and spine. Body weight, light dumbbells, or resistance bands all work. Keep sessions short and take full rest days. The CoQ10 supplement directly supports your muscle energy.</div>
     </div>
 
-    <!-- APOE -->
+    <!-- ═══════════ APOE ═══════════ -->
     <div class="gene-card priority-good">
       <div class="gene-header">
         <div>
-          <div class="gene-name">APOE rs7412 — homozygous ApoE2 &nbsp;<span style="font-size:12px;font-weight:300;color:var(--ink-faint);">genotype: TT (ApoE2/E2)</span></div>
-          <div class="gene-rsid">rs7412 &nbsp;·&nbsp; Chr 19:45412079 &nbsp;·&nbsp; c.526C&gt;T (p.Arg176Cys) &nbsp;·&nbsp; CADD 25.1 &nbsp;·&nbsp; Freq 7.5%</div>
+          <div class="gene-name">APOE — the brain protector you won the lottery on</div>
+          <div class="gene-rsid">Both copies of the protective version · rs7412 (ApoE2/E2) · only ~1 in 100 people have this</div>
         </div>
-        <span class="badge badge-green">Protective</span>
-      </div>
-      <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:0.75rem;">
-        <span class="badge badge-green" style="font-size:11px;">ClinVar: Drug response (generally protective)</span>
-        <span class="badge badge-gray" style="font-size:11px;">OMIM: 107741.0001</span>
-        <span class="badge badge-teal" style="font-size:11px;">Homozygous — ~0.5–1% of population</span>
+        <span class="badge badge-green">Good news — rare and protective</span>
       </div>
       <div class="gene-body">
-        <strong>What this gene does:</strong> APOE encodes apolipoprotein E — central to lipid transport and cholesterol clearance, and critically, to brain health. Expressed in brain tissue, ApoE plays a role in neuronal repair, synaptic plasticity, and clearing amyloid-beta protein (the primary constituent of Alzheimer's plaques).
+        <strong>The simple version:</strong> APOE is a protein that does two big jobs — it helps your body move cholesterol around in your bloodstream, and it helps your brain clear out a sticky waste protein called amyloid-beta. Amyloid-beta buildup is what forms the plaques you've heard about in Alzheimer's disease.
         <br><br>
-        <strong>The three APOE variants:</strong> ApoE2 (rs7412 T allele), ApoE3 (most common), ApoE4 (high-risk). ApoE4 is the most studied genetic risk factor for late-onset Alzheimer's — one copy doubles risk; two copies increases risk 8–12×. ApoE2 is at the opposite end of the spectrum: <strong>significantly reduced Alzheimer's risk</strong>.
+        <strong>The three versions of this gene:</strong> Everyone inherits one of three versions from each parent. ApoE2 (yours) is the rare protective one. ApoE3 is the most common — it's neutral. ApoE4 is the well-known risk version — having one copy roughly doubles your risk of Alzheimer's, and two copies multiplies it by 8 to 12 times. <strong style="color:var(--ink);">You inherited ApoE2 from both your mom and your dad. This is rare — only about 1 in 100 people are ApoE2/E2.</strong>
         <br><br>
-        <strong>Cathy's ApoE2/E2 genotype:</strong> Rare — only ~0.5–1% of the population. This is her most genetically favorable finding. ApoE2/E2 individuals have meaningfully reduced amyloid-beta accumulation. ApoE2 binds amyloid-beta more effectively than ApoE4, facilitating clearance before plaque formation. This does not make someone immune to Alzheimer's but it represents a significant biological advantage.
+        <strong>What this means for your brain:</strong> Your version of APOE clears amyloid-beta significantly more efficiently than the other versions. That doesn't make you immune to Alzheimer's — many factors contribute, including sleep, exercise, social engagement, and overall vascular health — but you're starting with a real biological advantage. Your brain is, all else equal, better equipped to handle aging.
         <br><br>
-        <strong>The lipid monitoring caveat:</strong> ApoE2 has lower affinity for LDL receptors than ApoE3/E4. Generally this means ApoE2 individuals tend to have lower LDL — another favorable finding, and Cathy's beautiful lipid numbers bear this out. However, homozygous ApoE2/E2 can in some individuals manifest as familial type 3 hyperlipoproteinemia (remnant particle disease) when combined with metabolic stressors (obesity, hypothyroidism, diabetes, certain medications). Cathy's current lipid panel is excellent — this is unlikely to be an issue, but it's why ongoing annual monitoring matters.
+        <strong>What this means for your cholesterol:</strong> ApoE2 people generally have naturally lower LDL cholesterol than average — and your numbers bear this out beautifully. There's one thing to watch for: very rarely, ApoE2/E2 combined with other metabolic stress can cause an unusual lipid pattern called "type 3 hyperlipoproteinemia." Your current panel shows zero sign of this, but it's why annual lipid checks matter.
         <br><br>
-        <strong>Statin pharmacogenomics:</strong> ApoE2 individuals tend to respond well to statins — consistent with Cathy's excellent LDL response to atorvastatin.
+        <strong>You also respond well to statins:</strong> ApoE2 people tend to be excellent statin responders — and your atorvastatin is doing exactly what it should. LDL of 44 is genuinely outstanding.
         <br><br>
-        <strong>Share this with her directly:</strong> This is genuinely reassuring news about neurological aging. The cognitive health habits — quality sleep, aerobic exercise, social connection, stress management (therapy is helping), intellectual engagement — remain important regardless of genotype, but she has a favorable genetic backdrop.
+        <strong>This deserves a moment of celebration.</strong> Most genetic findings tell us something to manage. This one tells us about something you got right at the genetic lottery. The therapy work you're doing on stress, the exercise routine, the sleep — all of those amplify this advantage further.
       </div>
       <div class="gene-tags">
         <span class="gene-tag" style="background:var(--green-light);color:var(--green);">Reduced Alzheimer's risk</span>
-        <span class="gene-tag" style="background:var(--green-light);color:var(--green);">Favorable amyloid clearance</span>
-        <span class="gene-tag" style="background:var(--green-light);color:var(--green);">Likely lower LDL</span>
-        <span class="gene-tag">Statin responder (favorable)</span>
-        <span class="gene-tag">Rare genotype (~0.5–1%)</span>
+        <span class="gene-tag" style="background:var(--green-light);color:var(--green);">Better amyloid clearance</span>
+        <span class="gene-tag" style="background:var(--green-light);color:var(--green);">Naturally lower LDL</span>
+        <span class="gene-tag">Strong statin responder</span>
+        <span class="gene-tag">Rare (~1 in 100)</span>
       </div>
-      <div class="gene-action" style="color:var(--green);">Action: Annual fasting lipid panel to rule out type 3 hyperlipoproteinemia (her current labs show no concern). Continue cognitive health habits. Share this finding with Cathy — meaningfully reassuring.</div>
+      <div class="gene-action" style="color:var(--green);"><strong>What to do:</strong> Keep an annual fasting lipid panel on the calendar (already on schedule). Keep doing what protects every brain — quality sleep, regular exercise, social connection, things that engage your mind. You're playing this game with a head start.</div>
     </div>
 
-    <!-- Additional pharmacogenomic -->
-    <div class="card" style="margin-top:0.5rem;">
-      <div class="card-title">Additional pharmacogenomic variants from GenVue panel</div>
-      <div style="font-size:13px;color:var(--ink-muted);line-height:1.75;">
-        <strong style="color:var(--ink);">GSTP1 Ile105Val (rs1695) — heterozygous:</strong> Glutathione S-transferase Pi 1 detoxification enzyme. Affects response to platinum-based chemotherapy (cisplatin, oxaliplatin), cyclophosphamide, and fluorouracil. Relevant if oncologic treatment ever required. Not a lifestyle concern; inform any oncologist.
+    <!-- ═══════════ SLCO1B1 (NEW from raw DNA) ═══════════ -->
+    <div class="gene-card priority-high">
+      <div class="gene-header">
+        <div>
+          <div class="gene-name">SLCO1B1 — your statin handler</div>
+          <div class="gene-rsid">One copy of the *5 variant · rs4149056 (T/C heterozygous) · this is why your dose got reduced</div>
+        </div>
+        <span class="badge badge-red">Pay attention</span>
+      </div>
+      <div class="gene-body">
+        <strong>The simple version:</strong> When you take a statin, your liver has to grab the medication out of your bloodstream and bring it inside the liver cells where it does its job. The SLCO1B1 gene makes the "doorway" protein on liver cells that lets statins in. If the doorway works at full speed, statins get pulled out of your bloodstream quickly. If the doorway is slower, statin levels stay higher in your blood for longer — which means the same dose hits your muscles harder.
         <br><br>
-        <strong style="color:var(--ink);">SOD2 Val16Ala (rs4880) — normal (AA wildtype):</strong> Superoxide dismutase 2 is the primary mitochondrial antioxidant. Normal AA genotype means mitochondrial antioxidant defense is intact — favorable for cardiovascular aging.
+        <strong>What's different about yours:</strong> You inherited one slow doorway gene (called the *5 variant) from one parent, and one normal doorway gene from the other. So your liver clears statins at roughly an intermediate pace — slower than someone with two normal copies, but faster than someone who inherited two slow copies. About 15% of Caucasians carry one copy like you.
         <br><br>
-        <strong style="color:var(--ink);">VKORC1 (rs7294) — normal (CC):</strong> Vitamin K epoxide reductase. Standard warfarin dosing applies if anticoagulation ever required. <em>Note: Cathy is currently on aspirin 81mg — if a switch to warfarin were ever needed, this is helpful context.</em>
+        <strong>Why this is the most clinically important finding in your genetic profile right now:</strong> When you started atorvastatin at 20mg in 2022, you developed muscle aches that prompted your doctor to drop the dose to 10mg. The muscle aches went away and the cholesterol-lowering effect was preserved. <strong style="color:var(--ink);">That clinical story matches your genetics exactly.</strong> The slow doorway means statin levels build up higher in your blood than they would for most people, and your muscles felt it. Reducing the dose was the right call — and your beautiful current LDL of 44 proves that 10mg is sufficient for someone with your variant.
         <br><br>
-        <strong style="color:var(--ink);">GP1BA Thr161Met (rs6065) — normal (CC):</strong> Glycoprotein Ib alpha. Standard aspirin response expected — consistent with Cathy's current aspirin regimen for secondary CAD prevention.
+        <strong>What this means going forward:</strong> Stay at 10mg of atorvastatin if it keeps working — and based on your numbers, it definitely is. If a doctor ever suggests increasing your statin or switching to a different one, this is the variant that needs to be on the table for the conversation:
+        <ul style="margin: 0.5rem 0 0.5rem 1.25rem; padding: 0; line-height: 1.75;">
+          <li><strong>Simvastatin</strong> is the statin most affected by your variant — would generally be a poor choice for you. Avoid if possible.</li>
+          <li><strong>Atorvastatin</strong> (your current) is somewhat affected but well-tolerated at 10mg. This is your best option at this dose.</li>
+          <li><strong>Rosuvastatin and pravastatin</strong> are less affected by SLCO1B1 — better backup choices if a switch is ever needed.</li>
+          <li><strong>Pitavastatin and fluvastatin</strong> are minimally affected — alternatives if needed.</li>
+        </ul>
+        <br>
+        <strong>Why this also matters for CoQ10:</strong> All statins deplete CoQ10, the spark plug of your muscle cells' energy factories. With your variant amplifying statin levels in muscle tissue, CoQ10 supplementation matters even more for you than it does for the average statin user. The Qunol CoQ10 in your supplement stack is doing real work here.
+      </div>
+      <div class="gene-tags">
+        <span class="gene-tag">Statin muscle ache risk</span>
+        <span class="gene-tag">Intermediate metabolizer</span>
+        <span class="gene-tag">Avoid simvastatin if possible</span>
+        <span class="gene-tag">CoQ10 essential</span>
+        <span class="gene-tag">Explains 2022 dose reduction</span>
+      </div>
+      <div class="gene-action" style="color:var(--teal);"><strong>What to do:</strong> Stay at atorvastatin 10mg — it's working perfectly for you. Keep taking CoQ10 daily (in the Qunol product). <strong>Tell any doctor who suggests a statin change about this variant before agreeing</strong> — especially if simvastatin is suggested. If statin intensification is ever needed for cardiovascular reasons, rosuvastatin would be a better alternative than higher-dose atorvastatin.</div>
+    </div>
+
+    <!-- ═══════════ 9p21 CAD LOCUS (NEW from raw DNA) ═══════════ -->
+    <div class="gene-card priority-mod">
+      <div class="gene-header">
+        <div>
+          <div class="gene-name">9p21 — the heart disease locus</div>
+          <div class="gene-rsid">Both copies of the variant · rs10757278 (G/G homozygous) · the most-studied genetic CAD risk factor</div>
+        </div>
+        <span class="badge badge-amber">Worth knowing</span>
+      </div>
+      <div class="gene-body">
+        <strong>The simple version:</strong> A specific stretch of DNA on chromosome 9 (called the 9p21 locus) is the single most-studied genetic risk factor for coronary artery disease. It doesn't make a protein the way most genes do — instead it produces regulatory RNA that influences how blood vessel cells age, divide, and respond to inflammation. Carriers of the variant tend to develop coronary plaque earlier and faster.
         <br><br>
-        <strong style="color:var(--ink);">HTR1A (rs6295) — heterozygous (GC):</strong> Serotonin receptor 1A. Affects paroxetine (Paxil) response. If an SSRI is ever prescribed for anxiety, this variant may influence the choice. Buspirone (current medication) is non-serotonergic and not affected.
+        <strong>What's different about yours:</strong> You inherited the risk version from both parents — what's called the G/G genotype at this position. Studies in multiple populations (American, European, Asian, Indian, Saudi) consistently show that G/G carriers have roughly 1.5 to 2 times the coronary artery disease risk of A/A carriers. Roughly 25% of people are G/G; another 50% are A/G; the remaining 25% are the protective A/A.
         <br><br>
-        <strong style="color:var(--ink);">NAT2 (rs1041983) — homozygous TT:</strong> N-acetyltransferase 2. Affects metabolism of isoniazid (TB drugs), pyrazinamide, sulfonamide antibiotics. Relevant only for specific drug exposures.
+        <strong>Why this matters in context:</strong> Your CAC score of 186 in 2021 was the moment your coronary artery disease became a known clinical fact. Your strong family history (brother MI at 49, sister MI) reinforces the picture. <strong style="color:var(--ink);">This 9p21 finding completes the picture — it's a third independent line of evidence pointing to genuine genetic CAD susceptibility, not just lifestyle or chance.</strong> All three signals (the actual coronary calcium, the family history, and the genotype) point in the same direction.
         <br><br>
-        <strong style="color:var(--ink);">TP53 Pro72Arg (rs1042522) — normal polymorphism:</strong> Tumor protein p53. The "guardian of the genome." This is the standard polymorphism, not a Li-Fraumeni disease-causing mutation. Normal cancer risk from this locus.
+        <strong>What this means practically — and the good news:</strong> Your current treatment regimen is exactly right for this risk profile. You're on:
+        <ul style="margin: 0.5rem 0 0.5rem 1.25rem; padding: 0; line-height: 1.75;">
+          <li>Atorvastatin (LDL of 44 — well below the secondary prevention target of 70)</li>
+          <li>Aspirin 81mg (antiplatelet protection)</li>
+          <li>Excellent HDL of 88 (protective)</li>
+          <li>Normal blood pressure (117/74)</li>
+          <li>Quit smoking 2018 (huge for vascular health)</li>
+          <li>Regular exercise (pilates, golf, walking)</li>
+          <li>Negative stress test 2024</li>
+        </ul>
+        <br>
+        <strong>This finding doesn't change your treatment — it confirms the treatment is right.</strong> It also reinforces why disease-modifying therapy (statin, aspirin) matters for you specifically, even with your beautiful current LDL number. With genetic CAD risk, lifestyle alone isn't sufficient. The medications are the protective floor under everything else.
+        <br><br>
+        <strong>One thing worth requesting:</strong> Ask your doctor to add hsCRP (a sensitive inflammation marker) to your next labs. The 9p21 mechanism partly works through vascular inflammation, and hsCRP helps quantify residual cardiovascular risk on top of cholesterol levels. Cheap, simple test — useful added information.
+      </div>
+      <div class="gene-tags">
+        <span class="gene-tag">Genetic CAD risk confirmed</span>
+        <span class="gene-tag">Reinforces secondary prevention</span>
+        <span class="gene-tag">Consistent with CAC 186</span>
+        <span class="gene-tag">Family history correlated</span>
+        <span class="gene-tag">hsCRP recommended</span>
+      </div>
+      <div class="gene-action" style="color:var(--amber);"><strong>What to do:</strong> Stay rigorously on your current cardiovascular regimen — atorvastatin, aspirin, exercise. Don't skip doses. Add hsCRP to your next bloodwork order. Continue annual cardiology follow-up. The work you're already doing is the right work — this finding just underlines why it matters.</div>
+    </div>
+
+
+    <!-- ═══════════ MEDICATION RESPONSE GENES ═══════════ -->
+    <div class="card" style="margin-top:1.5rem;">
+      <div class="card-title">Medication response notes (the seven smaller findings)</div>
+      <div style="font-size:13px;color:var(--ink-muted);line-height:1.75; margin-bottom:0.75rem;">
+        These won't change your daily life, but they're worth keeping in your medical file in case certain medications come up someday. Show this section to any new doctor who's prescribing something new.
+      </div>
+
+      <div style="font-size:13.5px;color:var(--ink-muted);line-height:1.85;">
+        <strong style="color:var(--ink);">GSTP1 — chemotherapy response (one copy of variant):</strong> Affects how your body handles certain chemotherapy drugs (cisplatin, oxaliplatin, fluorouracil). You don't need to do anything with this now — but if cancer treatment is ever needed, the oncologist should know.
+        <br><br>
+        <strong style="color:var(--ink);">SOD2 — mitochondrial antioxidant (normal):</strong> Good news — your version is the standard one. Your cells have full antioxidant protection.
+        <br><br>
+        <strong style="color:var(--ink);">VKORC1 — warfarin sensitivity (normal):</strong> If you ever need a blood thinner called warfarin (Coumadin), standard dosing should work normally for you. You're currently on aspirin, which is fine.
+        <br><br>
+        <strong style="color:var(--ink);">GP1BA — aspirin response (normal):</strong> Good news — your aspirin is doing exactly what it should at the standard 81mg dose.
+        <br><br>
+        <strong style="color:var(--ink);">HTR1A — antidepressant response (one copy of variant):</strong> If an SSRI antidepressant is ever needed, this variant means you'd likely respond a bit slower than average — particularly to one called paroxetine (Paxil). <strong style="color:var(--ink);">Important context: your current buspirone works through a different mechanism and is not affected by this variant — your remission on it is the most reliable signal.</strong> If an SSRI ever does come up, sertraline or escitalopram are reasonable starting choices, and making sure your methylfolate (MTHFR) is optimized first matters more than the specific drug pick.
+        <br><br>
+        <strong style="color:var(--ink);">NAT2 — TB drug metabolism (both copies of variant):</strong> Affects how you'd metabolize certain antibiotics (mostly tuberculosis drugs and some sulfa antibiotics). Mostly relevant if you're ever prescribed isoniazid.
+        <br><br>
+        <strong style="color:var(--ink);">TP53 Pro72Arg (one copy of variant):</strong> This is the famous "guardian of the genome" gene. The Pro72Arg variant is extremely common — about half of all people carry at least one copy, and you have one. <strong>This is not a Li-Fraumeni or cancer-predisposing mutation</strong> — it's a normal variation in how the protein folds, classified by ClinVar as "drug response" rather than disease-causing. No elevated cancer risk from this gene.
+      </div>
+
+    <!-- ═══════════ ADDITIONAL FINDINGS FROM RAW DNA ═══════════ -->
+    <div class="card" style="margin-top:1.5rem;">
+      <div class="card-title">Additional findings from your raw Ancestry data</div>
+      <div style="font-size:13px;color:var(--ink-muted);line-height:1.75; margin-bottom:0.75rem;">
+        Three minor findings worth knowing about. None require action right now, but they help round out the picture.
+      </div>
+
+      <div style="font-size:13.5px;color:var(--ink-muted);line-height:1.85;">
+        <strong style="color:var(--ink);">TCF7L2 — type 2 diabetes susceptibility (one copy of variant, rs7903146):</strong> The most-studied genetic risk factor for type 2 diabetes. One copy of the T allele raises lifetime T2D risk by roughly 40%. <strong>This is reassuring news given how it's playing out clinically</strong> — your HbA1c has stayed beautifully stable in the 5.2 to 5.5 range for eight years, well below the 5.7 prediabetes threshold. Your active lifestyle, normal weight, and Mediterranean-style eating pattern are doing exactly what someone with this variant should do. Keep going.
+        <br><br>
+        <strong style="color:var(--ink);">IL6 — inflammation regulator (one copy of variant, rs1800795):</strong> Affects how vigorously your body produces interleukin-6, a key inflammatory signaling molecule. Carriers may have slightly elevated baseline inflammation. Combined with your established CAD, this is another reason to add hsCRP to your next bloodwork — it tells us whether residual inflammation is something to actively address or not.
+        <br><br>
+        <strong style="color:var(--ink);">LCT — lactose tolerance (one copy of persistence allele, rs4988235):</strong> You inherited one copy of the gene that keeps lactase production switched on into adulthood — meaning you can digest dairy normally. Most adults worldwide gradually lose this ability after childhood; you didn't. This is a perk for bone health since dairy is one of the easiest dietary calcium sources, and given your osteoporosis diagnosis, that's a real advantage.
       </div>
     </div>
+
+    <!-- ═══════════ CONFIRMED NEGATIVE / GOOD NEWS CARD ═══════════ -->
+    <div class="card" style="margin-top:1.5rem; background:var(--green-light); border-color:var(--green);">
+      <div class="card-title" style="color:var(--green);">Confirmed clear — variants you do NOT carry</div>
+      <div style="font-size:13px;color:var(--ink-muted);line-height:1.75; margin-bottom:0.75rem;">
+        Your raw Ancestry data was checked against several other clinically important variants. <strong style="color:var(--ink);">You're clear on all of these</strong> — meaning none of these specific genetic risks apply to you. This is good news worth filing.
+      </div>
+
+      <div style="font-size:13.5px;color:var(--ink-muted);line-height:1.85;">
+        <strong style="color:var(--green);">✓ Factor V Leiden (rs6025):</strong> The most common inherited blood-clotting disorder. <strong>You don't carry it.</strong> Standard low risk for deep vein thrombosis, pulmonary embolism, and stroke from this gene. Important context for any surgery, immobilization, or estrogen therapy.
+        <br><br>
+        <strong style="color:var(--green);">✓ Hemochromatosis (HFE C282Y and H63D):</strong> Iron overload disease. Both major variants checked — <strong>you carry neither.</strong> No risk of iron accumulation in liver, heart, or joints from this gene.
+        <br><br>
+        <strong style="color:var(--green);">✓ ALDH2 (rs671):</strong> Alcohol-flush variant common in East Asian populations. <strong>You don't carry it.</strong> Normal alcohol metabolism (though for cardiovascular reasons, minimal alcohol remains the right call).
+        <br><br>
+        <strong style="color:var(--green);">✓ Second MTHFR variant — A1298C (rs1801131):</strong> The other common MTHFR variant. <strong>You don't carry it.</strong> This is meaningful — having both C677T and A1298C compounds methylation impairment. You only have the one (C677T), so the methylation problem is real but moderate, not severe.
+        <br><br>
+        <strong style="color:var(--green);">✓ FTO obesity variant (rs9939609):</strong> The most-studied common genetic predisposition to obesity. <strong>You don't carry it.</strong> Consistent with your normal BMI throughout your records.
+        <br><br>
+        <strong style="color:var(--green);">✓ LPA elevation variant (rs10455872):</strong> A genetic variant that causes very high lipoprotein(a). <strong>You don't carry it.</strong> Worth still getting an Lp(a) blood test once in your life since other variants exist, but this major one is clear.
+        <br><br>
+        <strong style="color:var(--green);">✓ MTRR (rs1801394) and MTR (rs1805087):</strong> Two other genes in the methylation pathway alongside MTHFR. Both <strong>normal in you.</strong> Means the methylation support protocol (Methyl-Guard Plus) targets only the one weak link (MTHFR) rather than a stacked problem.
+        <br><br>
+        <strong style="color:var(--green);">✓ Common smoking-related lung cancer susceptibility variant (CHRNA3 rs1051730):</strong> A variant linked to nicotine dependence and lung cancer risk in smokers. <strong>You don't carry it.</strong> Combined with quitting in 2018 and stable LDCT scans, this is another reassuring data point.
+      </div>
+    </div>
+
+
+    </div>
   </section>
+
 
   <!-- ═══════════════════════════════════════════════════════ -->
   <!-- MEDICATIONS                                               -->
@@ -1933,7 +2017,8 @@
       <div class="card" style="border-top:3px solid var(--amber);">
         <div style="font-size:13px;font-weight:500;color:var(--amber);margin-bottom:0.75rem;text-transform:uppercase;letter-spacing:0.07em;">Near-term — next 1–3 months</div>
         <div class="action-item"><div class="action-dot dot-amber"></div><div><strong>Request Lp(a) test.</strong> Once-in-a-lifetime genetic lipid marker. Given established CAD + early MI in both siblings, this is important missing information.</div></div>
-        <div class="action-item"><div class="action-dot dot-amber"></div><div><strong>Request hsCRP.</strong> Residual inflammation risk assessment given CAD. Helps guide intensity of preventive care.</div></div>
+        <div class="action-item"><div class="action-dot dot-amber"></div><div><strong>Request hsCRP.</strong> Residual inflammation risk assessment. Especially relevant given the 9p21 CAD locus finding (mechanism partly inflammatory) and IL6 variant. Cheap, simple add-on to next bloodwork.</div></div>
+        <div class="action-item"><div class="action-dot dot-amber"></div><div><strong>Flag SLCO1B1 status with any new prescriber.</strong> If a doctor ever suggests changing your statin (especially to simvastatin) or increasing the dose, mention you carry one copy of the *5 variant. Atorvastatin 10mg is the right dose for you. Rosuvastatin would be a better backup than higher-dose atorvastatin.</div></div>
         <div class="action-item"><div class="action-dot dot-amber"></div><div><strong>Request serum B12 + ferritin.</strong> Functional status beyond CBC. CBC can look normal while these are depleted.</div></div>
         <div class="action-item"><div class="action-dot dot-amber"></div><div><strong>Begin targeted resistance training 2–3×/week.</strong> Weight-bearing exercise is the most evidence-backed non-drug intervention for bone density. Focus on hip and spine loading. Body weight + light weights + bands are fine. She already does pilates — layer resistance on top.</div></div>
         <div class="action-item"><div class="action-dot dot-amber"></div><div><strong>Dietary sodium audit.</strong> Track 2 weeks of sodium intake. Target &lt;1,500mg/day given ADD1 variant. Process it with her — she already eats well; this is a specific optimization.</div></div>
